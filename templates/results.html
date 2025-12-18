@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraction Results - EmilY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+</div>
+
+<div class="container" style="max-width: 1000px;">
+    <header class="header">
+        <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit;">
+                <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
+            </a>
+        </div>
+        <p class="subtitle">Enhanced medical intelligence for logical yield</p>
+    </header>
+
+    <div class="results-actions" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back to Upload</a>
+        <button onclick="window.print()" class="copy-btn"><i class="fas fa-print"></i> Print Report</button>
+    </div>
+
+    {% if results %}
+    <div class="results-grid">
+        {% for bill in results %}
+        <div class="result-card">
+            <div class="bill-header">
+                <div class="bill-id">
+                    <span class="label">Invoice:</span>
+                    <span class="value">{{ bill.inv }}</span>
+                </div>
+                <div class="bill-date">{{ bill.date }}</div>
+            </div>
+            
+            <div class="bill-section">
+                <h4><i class="fas fa-hospital"></i> Provider Information</h4>
+                <div class="info-row">
+                    <span class="label">Name:</span>
+                    <span class="value">{{ bill.provider }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">NPI:</span>
+                    <span class="value">{{ bill.npi }}</span>
+                </div>
+            </div>
+
+            <div class="bill-section">
+                <h4><i class="fas fa-user"></i> Patient Information</h4>
+                <div class="info-row">
+                    <span class="label">Patient:</span>
+                    <span class="value">{{ bill.patient }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Patient ID:</span>
+                    <span class="value">{{ bill.patient_id }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Insurance ID:</span>
+                    <span class="value">{{ bill.insurance_id }}</span>
+                </div>
+            </div>
+
+            <div class="bill-section">
+                <h4><i class="fas fa-stethoscope"></i> Diagnosis & Services</h4>
+                <div class="info-row">
+                    <span class="label">Diagnosis Code:</span>
+                    <span class="value highlight">{{ bill.diagnosis }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Description:</span>
+                    <span class="value">{{ bill.diagnosis_desc }}</span>
+                </div>
+                {% if bill.cpt_codes %}
+                <div class="info-row" style="flex-direction: column; align-items: flex-start;">
+                    <span class="label" style="margin-bottom: 0.5rem;">CPT Codes <i class="fas fa-info-circle info-icon" title="Current Procedural Terminology: a medical code set that is used to report medical, surgical, and diagnostic procedures and services."></i>:</span>
+                    <div class="cpt-list" style="width: 100%;">
+                        {% for item in bill.cpt_codes %}
+                        <div class="cpt-item" style="margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="cpt-badge">{{ item.code }}</span>
+                            <span class="value" style="font-size: 0.85rem; text-align: left;">{{ item.desc }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="bill-footer">
+                <div class="total-row">
+                    <span>Total Charges:</span>
+                    <span class="price">${{ bill.total_charges }}</span>
+                </div>
+                <div class="total-row due">
+                    <span>Amount Due:</span>
+                    <span class="price">${{ bill.amount_due }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="card">
+        <p style="text-align: center; color: var(--text-muted);">No information extracted. Please try again with valid medical bills.</p>
+    </div>
+    {% endif %}
+
+    <footer class="footer">
+        <p>&copy; 2025 EmilY. Precision document analysis.</p>
+    </footer>
+</div>
+
+</body>
+</html>

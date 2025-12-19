@@ -11,6 +11,7 @@ class BillExtractor:
         self.allowed_extensions = {'pdf'}
         # Dictionary of common CPT codes and their descriptions
         self.cpt_descriptions = {
+            '32853': 'Lung transplant, bilateral',
             '99202': 'Office/outpatient visit, new patient, 15-29 min',
             '99203': 'Office/outpatient visit, new patient, 30-44 min',
             '99204': 'Office/outpatient visit, new patient, 45-59 min',
@@ -127,11 +128,11 @@ class BillExtractor:
                 for code in unique_codes
             ]
         
-        total_match = re.search(r'TOTAL CHARGES:\s*\n?\s*(\d+\.\d{2})', text)
-        if total_match: data['total_charges'] = total_match.group(1).strip()
+        total_match = re.search(r'TOTAL CHARGES:\s*\n?\s*\$?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)', text)
+        if total_match: data['total_charges'] = total_match.group(1).replace(',', '').strip()
         
-        due_match = re.search(r'AMOUNT DUE:\s*\n?\s*(\d+\.\d{2})', text)
-        if due_match: data['amount_due'] = due_match.group(1).strip()
+        due_match = re.search(r'AMOUNT DUE:\s*\n?\s*\$?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)', text)
+        if due_match: data['amount_due'] = due_match.group(1).replace(',', '').strip()
         
         return data
 
@@ -144,5 +145,160 @@ class BillExtractor:
             text = self.extract_text(filepath)
             bill_data = self.parse_bill_info(text)
             return bill_data, None
+        except Exception as e:
+            return None, str(e)
+
+class ReportExtractor:
+    """
+    A class to handle medical report PDF extraction.
+    """
+    def __init__(self):
+        pass
+
+    def extract_text(self, filepath):
+        """Extract all text from the PDF file."""
+        try:
+            reader = PdfReader(filepath)
+            full_text = ""
+            for page in reader.pages:
+                text = page.extract_text()
+                if text:
+                    full_text += text + "\n"
+            return full_text
+        except Exception as e:
+            raise Exception(f"Failed to extract text from PDF: {str(e)}")
+
+    def parse_report_info(self, text):
+        """Extract structured info from report text using regex."""
+        data = {
+            'type': 'Clinical Report',
+            'patient': 'N/A',
+            'patient_id': 'N/A',
+            'date': 'N/A',
+            'chief_complaint': 'N/A',
+            'assessment': 'N/A',
+            'icd10': 'N/A',
+            'plan': 'N/A'
+        }
+
+        patient_match = re.search(r'PATIENT NAME:\s*\n?(.*)', text, re.IGNORECASE)
+        if patient_match: data['patient'] = patient_match.group(1).strip()
+
+        id_match = re.search(r'PATIENT ID:\s*\n?(P\d+)', text, re.IGNORECASE)
+        if id_match: data['patient_id'] = id_match.group(1).strip()
+
+        date_match = re.search(r'DATE:\s*\n?(\d{4}-\d{2}-\d{2})', text, re.IGNORECASE)
+        if date_match: data['date'] = date_match.group(1).strip()
+
+        cc_match = re.search(r'CHIEF COMPLAINT:\s*\n?(.*?)\n\n?(?:HISTORY|ASSESSMENT|VITALS|PLAN|$)', text, re.DOTALL | re.IGNORECASE)
+        if cc_match: data['chief_complaint'] = cc_match.group(1).strip()
+
+        assessment_match = re.search(r'ASSESSMENT:\s*\n?(.*?)\n\n?(?:ICD|PLAN|PLAN:|ELECTRONICALLY|$)', text, re.DOTALL | re.IGNORECASE)
+        if assessment_match: data['assessment'] = assessment_match.group(1).strip()
+
+        icd_match = re.search(r'ICD-10(?:\s*Codes)?:\s*([A-Z]\d+\.?\d*)', text, re.IGNORECASE)
+        if icd_match: data['icd10'] = icd_match.group(1).strip()
+
+        plan_match = re.search(r'PLAN:\s*\n?(.*?)\n\n?(?:ELECTRONICALLY|$)', text, re.DOTALL | re.IGNORECASE)
+        if plan_match: data['plan'] = plan_match.group(1).strip()
+
+        # Fallback for historical reports (different format)
+        if data['patient'] == 'N/A':
+            patient_match = re.search(r'Patient Name:\s*(.*)', text)
+            if patient_match: data['patient'] = patient_match.group(1).strip()
+
+        if data['patient_id'] == 'N/A':
+            id_match = re.search(r'Patient ID:\s*(P\d+)', text)
+            if id_match: data['patient_id'] = id_match.group(1).strip()
+
+        if data['date'] == 'N/A':
+            date_match = re.search(r'Date:\s*(\d{4}-\d{2}-\d{2})', text)
+            if date_match: data['date'] = date_match.group(1).strip()
+
+        if data['chief_complaint'] == 'N/A':
+            cc_match = re.search(r'Chief Complaint\n(.*?)\n', text, re.DOTALL)
+            if cc_match: data['chief_complaint'] = cc_match.group(1).strip()
+
+        if data['assessment'] == 'N/A':
+            assessment_match = re.search(r'Assessment\n(.*?)\n', text, re.DOTALL)
+            if assessment_match: data['assessment'] = assessment_match.group(1).strip()
+
+        if data['plan'] == 'N/A':
+            plan_match = re.search(r'Plan\n(.*?)(?:\n\n|\nCity Memorial|$)', text, re.DOTALL)
+            if plan_match: data['plan'] = plan_match.group(1).strip()
+
+        return data
+
+    def process_pdf(self, filepath):
+        """High-level method to validate and extract info from a PDF report file."""
+        try:
+            text = self.extract_text(filepath)
+            report_data = self.parse_report_info(text)
+            return report_data, None
+        except Exception as e:
+            return None, str(e)
+
+class PersonalExtractor:
+    """
+    A class to handle personal records PDF extraction.
+    """
+    def __init__(self):
+        pass
+
+    def extract_text(self, filepath):
+        """Extract all text from the PDF file."""
+        try:
+            reader = PdfReader(filepath)
+            full_text = ""
+            for page in reader.pages:
+                text = page.extract_text()
+                if text:
+                    full_text += text + "\n"
+            return full_text
+        except Exception as e:
+            raise Exception(f"Failed to extract text from PDF: {str(e)}")
+
+    def parse_personal_info(self, text):
+        """Extract structured info from personal record text using regex."""
+        data = {
+            'type': 'Personal Record',
+            'name': 'N/A',
+            'patient_id': 'N/A',
+            'dob': 'N/A',
+            'insurance_id': 'N/A',
+            'address': 'N/A',
+            'phone': 'N/A',
+            'email': 'N/A'
+        }
+
+        name_match = re.search(r'Name:\s*(.*)', text, re.IGNORECASE)
+        if name_match: data['name'] = name_match.group(1).strip()
+
+        id_match = re.search(r'Patient ID:\s*(P\d+)', text, re.IGNORECASE)
+        if id_match: data['patient_id'] = id_match.group(1).strip()
+
+        dob_match = re.search(r'Date of Birth:\s*(\d{4}-\d{2}-\d{2})', text, re.IGNORECASE)
+        if dob_match: data['dob'] = dob_match.group(1).strip()
+
+        ins_match = re.search(r'Insurance ID:\s*(INS\d+)', text, re.IGNORECASE)
+        if ins_match: data['insurance_id'] = ins_match.group(1).strip()
+
+        addr_match = re.search(r'Address:\s*(.*)', text, re.IGNORECASE)
+        if addr_match: data['address'] = addr_match.group(1).strip()
+
+        phone_match = re.search(r'Phone:\s*(.*)', text, re.IGNORECASE)
+        if phone_match: data['phone'] = phone_match.group(1).strip()
+
+        email_match = re.search(r'Email:\s*(.*)', text, re.IGNORECASE)
+        if email_match: data['email'] = email_match.group(1).strip()
+
+        return data
+
+    def process_pdf(self, filepath):
+        """High-level method to validate and extract info from a PDF personal record file."""
+        try:
+            text = self.extract_text(filepath)
+            personal_data = self.parse_personal_info(text)
+            return personal_data, None
         except Exception as e:
             return None, str(e)

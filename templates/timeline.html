@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Timeline - {{ patient_id }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Vertical Timeline Styles */
+        .event-date {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .event-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .badge-billing { background-color: #e3f2fd; color: #1976d2; }
+        .badge-report { background-color: #f3e5f5; color: #7b1fa2; }
+        .event-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            white-space: normal;
+        }
+        .event-details {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <a href="/" class="nav-brand">
+        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+    </a>
+    <div class="nav-links">
+        <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="/results" class="nav-link"><i class="fas fa-file-medical-alt"></i> Results</a>
+    </div>
+</nav>
+
+<div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+</div>
+
+<div class="main-wrapper">
+    <div class="container" style="max-width: 1100px;">
+        <header class="header">
+            <div class="logo">
+                <a href="/" style="text-decoration: none; color: inherit;">
+                    <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
+                </a>
+            </div>
+            <p class="subtitle">Patient Medical Journey: {{ patient_id }}</p>
+        </header>
+
+    <div class="results-actions" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" class="back-link"><i class="fas fa-home"></i> Back to Home</a>
+        <a href="/results" class="back-link"><i class="fas fa-arrow-left"></i> Back to Results</a>
+    </div>
+
+    {% if events %}
+    <div class="timeline-container">
+        <div class="timeline-vertical" id="timeline-v">
+            <div class="timeline-progress-line" id="timeline-progress"></div>
+            {% for event in events %}
+            <div class="timeline-item-v" style="animation-delay: {{ loop.index0 * 0.2 }}s;">
+                <div class="timeline-content-v">
+                    <span class="event-date" style="animation: fadeIn 0.5s ease forwards; animation-delay: {{ 0.5 + loop.index0 * 0.2 }}s; opacity: 0;"><i class="far fa-calendar-alt"></i> {{ event.date }}</span>
+                    <span class="event-badge {{ 'badge-billing' if event.event_type == 'Billing' else 'badge-report' }}">
+                        {{ event.event_type }}
+                    </span>
+                    
+                    {% if event.event_type == 'Billing' %}
+                    <div class="event-title">{{ event.diagnosis_desc }}</div>
+                    <div class="event-details">
+                        <p><strong>Provider:</strong> {{ event.provider }}</p>
+                        <p><strong>Invoice:</strong> {{ event.inv }}</p>
+                        <p><strong>Amount:</strong> ${{ event.total_charges }}</p>
+                        {% if event.cpt_codes %}
+                        <div style="margin-top: 0.5rem;">
+                            {% for cpt in event.cpt_codes %}
+                            <span class="cpt-badge" style="font-size: 0.7rem;">{{ cpt.code }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <div class="event-title">{{ event.assessment.split('\n')[0] }}</div>
+                    <div class="event-details">
+                        <p><strong>Chief Complaint:</strong> {{ event.chief_complaint }}</p>
+                        {% if event.icd10 != 'N/A' %}
+                        <p><strong>ICD-10:</strong> <span class="highlight">{{ event.icd10 }}</span></p>
+                        {% endif %}
+                        <p><strong>Plan:</strong> {{ event.plan }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <div class="card">
+        <p style="text-align: center; color: var(--text-muted);">No records found for patient ID: {{ patient_id }}</p>
+    </div>
+    {% endif %}
+
+    <footer class="footer">
+        <p>&copy; 2025 EmilY. Precision medical analytics.</p>
+    </footer>
+    </div>
+</div>
+</div>
+
+<script>
+    let ticking = false;
+
+    function updateProgress() {
+        const timeline = document.getElementById('timeline-v');
+        const progress = document.getElementById('timeline-progress');
+        if (!timeline || !progress) {
+            ticking = false;
+            return;
+        }
+
+        const timelineRect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const viewportCenter = windowHeight / 2;
+
+        // Progress should be based on how much of the timeline has passed the middle of the screen
+        const progressTarget = viewportCenter - timelineRect.top;
+        
+        // Calculate percentage (0 to 100)
+        let percentage = (progressTarget / timelineRect.height) * 100;
+        
+        // Clamp between 0 and 100
+        percentage = Math.max(0, Math.min(100, percentage));
+        
+        progress.style.height = percentage + '%';
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateProgress);
+            ticking = true;
+        }
+    });
+    
+    // Initial call to set position on load
+    window.requestAnimationFrame(updateProgress);
+</script>
+
+</body>
+</html>

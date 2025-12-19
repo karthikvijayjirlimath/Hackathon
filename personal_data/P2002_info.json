@@ -1,0 +1,9 @@
+{
+    "patient_id": "P2002",
+    "name": "John Doe",
+    "dob": "1975-08-20",
+    "insurance_id": "INS887766",
+    "address": "123 Maple St, Springfield, IL 62704",
+    "phone": "555-0199",
+    "email": "john.doe@example.com"
+}

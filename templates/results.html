@@ -7,66 +7,136 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Vertical Timeline Styles */
+        .badge-billing { background-color: #e3f2fd; color: #1976d2; }
+        .badge-report { background-color: #f3e5f5; color: #7b1fa2; }
+        .event-date {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            display: block;
+            font-size: 0.9rem;
+        }
+        .event-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .event-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            white-space: normal;
+        }
+        .event-details {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
+
+<nav class="top-nav">
+    <a href="/" class="nav-brand">
+        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+    </a>
+    <div class="nav-links">
+        <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="/results" class="nav-link active"><i class="fas fa-file-medical-alt"></i> Results</a>
+    </div>
+</nav>
 
 <div class="background-blobs">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 </div>
 
-<div class="container" style="max-width: 1000px;">
-    <header class="header">
-        <div class="logo">
-            <a href="/" style="text-decoration: none; color: inherit;">
-                <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
-            </a>
-        </div>
-        <p class="subtitle">Enhanced medical intelligence for logical yield</p>
-    </header>
+<div class="main-wrapper">
+    <div class="container" style="max-width: 1000px;">
+        <header class="header">
+            <div class="logo">
+                <a href="/" style="text-decoration: none; color: inherit;">
+                    <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
+                </a>
+            </div>
+            <p class="subtitle">Enhanced medical intelligence for logical yield</p>
+        </header>
 
-    <div class="results-actions" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back to Upload</a>
-        <button onclick="window.print()" class="copy-btn"><i class="fas fa-print"></i> Print Report</button>
+    <div class="results-actions" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back to Start</a>
+        
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <form action="/" method="post" enctype="multipart/form-data" id="append-form" style="display: flex; align-items: center; gap: 0.5rem;">
+                <input type="file" name="files" id="append-file-input" accept=".pdf" multiple required style="display: none;" onchange="document.getElementById('append-form').submit()">
+                <button type="button" onclick="document.getElementById('append-file-input').click()" class="copy-btn" style="background-color: var(--secondary-color); color: white; border: none;">
+                    <i class="fas fa-plus-circle"></i> Upload More
+                </button>
+            </form>
+
+            {% if results %}
+            <a href="/timeline/{{ results[0].patient_id }}" class="copy-btn" style="text-decoration: none; background-color: var(--primary-color); color: white;">
+                <i class="fas fa-stream"></i> View Timeline
+            </a>
+            {% endif %}
+            <button onclick="window.print()" class="copy-btn"><i class="fas fa-print"></i> Print Report</button>
+        </div>
     </div>
 
     {% if results %}
-    <div class="results-grid">
-        {% for bill in results %}
-        <div class="result-card">
-            <div class="bill-header">
-                <div class="bill-id">
-                    <span class="label">Invoice:</span>
-                    <span class="value">{{ bill.inv }}</span>
-                </div>
-                <div class="bill-date">{{ bill.date }}</div>
-            </div>
-            
-            <div class="bill-section">
-                <h4><i class="fas fa-hospital"></i> Provider Information</h4>
+    <div class="patient-summary card" style="margin-bottom: 2rem;">
+        <div class="bill-section" style="border: none; padding: 0;">
+            <h3 style="margin-bottom: 1rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem;">
+                <i class="fas fa-user-medical"></i> Patient Information
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                 <div class="info-row">
-                    <span class="label">Name:</span>
-                    <span class="value">{{ bill.provider }}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">NPI:</span>
-                    <span class="value">{{ bill.npi }}</span>
-                </div>
-            </div>
-
-            <div class="bill-section">
-                <h4><i class="fas fa-user"></i> Patient Information</h4>
-                <div class="info-row">
-                    <span class="label">Patient:</span>
-                    <span class="value">{{ bill.patient }}</span>
+                    <span class="label">Patient Name:</span>
+                    <span class="value" style="font-size: 1.1rem; font-weight: 600;">{{ results[0].patient }}</span>
                 </div>
                 <div class="info-row">
                     <span class="label">Patient ID:</span>
-                    <span class="value">{{ bill.patient_id }}</span>
+                    <span class="value">{{ results[0].patient_id }}</span>
                 </div>
                 <div class="info-row">
                     <span class="label">Insurance ID:</span>
-                    <span class="value">{{ bill.insurance_id }}</span>
+                    <span class="value">{{ results[0].insurance_id }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-bottom: 1rem;"><i class="fas fa-file-medical-alt"></i> Extracted Records</h3>
+    <div class="results-grid">
+        {% for record in results %}
+        <div class="result-card">
+            <div class="bill-header">
+                <div class="bill-id">
+                    <span class="label">Type:</span>
+                    <span class="value" style="color: var(--primary-color); font-weight: 700;">{{ record.record_type }}</span>
+                </div>
+                <div class="bill-date">{{ record.date or record.dob or 'N/A' }}</div>
+            </div>
+            
+            {% if record.record_type == 'Bill' %}
+            <div class="bill-section">
+                <div class="bill-id" style="margin-bottom: 0.5rem;">
+                    <span class="label">Invoice:</span>
+                    <span class="value">{{ record.inv }}</span>
+                </div>
+                <h4><i class="fas fa-hospital"></i> Provider Information</h4>
+                <div class="info-row">
+                    <span class="label">Name:</span>
+                    <span class="value">{{ record.provider }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">NPI:</span>
+                    <span class="value">{{ record.npi }}</span>
                 </div>
             </div>
 
@@ -74,17 +144,17 @@
                 <h4><i class="fas fa-stethoscope"></i> Diagnosis & Services</h4>
                 <div class="info-row">
                     <span class="label">Diagnosis Code:</span>
-                    <span class="value highlight">{{ bill.diagnosis }}</span>
+                    <span class="value highlight">{{ record.diagnosis }}</span>
                 </div>
                 <div class="info-row">
                     <span class="label">Description:</span>
-                    <span class="value">{{ bill.diagnosis_desc }}</span>
+                    <span class="value">{{ record.diagnosis_desc }}</span>
                 </div>
-                {% if bill.cpt_codes %}
+                {% if record.cpt_codes %}
                 <div class="info-row" style="flex-direction: column; align-items: flex-start;">
-                    <span class="label" style="margin-bottom: 0.5rem;">CPT Codes <i class="fas fa-info-circle info-icon" title="Current Procedural Terminology: a medical code set that is used to report medical, surgical, and diagnostic procedures and services."></i>:</span>
+                    <span class="label" style="margin-bottom: 0.5rem;">CPT Codes:</span>
                     <div class="cpt-list" style="width: 100%;">
-                        {% for item in bill.cpt_codes %}
+                        {% for item in record.cpt_codes %}
                         <div class="cpt-item" style="margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
                             <span class="cpt-badge">{{ item.code }}</span>
                             <span class="value" style="font-size: 0.85rem; text-align: left;">{{ item.desc }}</span>
@@ -98,16 +168,75 @@
             <div class="bill-footer">
                 <div class="total-row">
                     <span>Total Charges:</span>
-                    <span class="price">${{ bill.total_charges }}</span>
+                    <span class="price">${{ record.total_charges }}</span>
                 </div>
                 <div class="total-row due">
                     <span>Amount Due:</span>
-                    <span class="price">${{ bill.amount_due }}</span>
+                    <span class="price">${{ record.amount_due }}</span>
                 </div>
             </div>
+            
+            {% elif record.record_type == 'Clinical Report' %}
+            <div class="bill-section">
+                <h4><i class="fas fa-notes-medical"></i> Clinical Summary</h4>
+                <div class="info-row" style="flex-direction: column; align-items: flex-start; margin-bottom: 1rem;">
+                    <span class="label">Chief Complaint:</span>
+                    <p class="value" style="margin-top: 0.25rem;">{{ record.chief_complaint }}</p>
+                </div>
+                <div class="info-row" style="flex-direction: column; align-items: flex-start; margin-bottom: 1rem;">
+                    <span class="label">Assessment:</span>
+                    <p class="value" style="margin-top: 0.25rem;">{{ record.assessment }}</p>
+                </div>
+                <div class="info-row">
+                    <span class="label">ICD-10 Code:</span>
+                    <span class="value highlight">{{ record.icd10 }}</span>
+                </div>
+            </div>
+            <div class="bill-section" style="border-bottom: none;">
+                <h4><i class="fas fa-clipboard-list"></i> Plan</h4>
+                <p class="value">{{ record.plan }}</p>
+            </div>
+
+            {% elif record.record_type == 'Personal Record' %}
+            <div class="bill-section">
+                <h4><i class="fas fa-id-card"></i> Personal Information</h4>
+                <div class="info-row">
+                    <span class="label">Full Name:</span>
+                    <span class="value">{{ record.name }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Date of Birth:</span>
+                    <span class="value">{{ record.dob }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Patient ID:</span>
+                    <span class="value">{{ record.patient_id }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Insurance ID:</span>
+                    <span class="value">{{ record.insurance_id }}</span>
+                </div>
+            </div>
+            <div class="bill-section" style="border-bottom: none;">
+                <h4><i class="fas fa-address-book"></i> Contact Details</h4>
+                <div class="info-row">
+                    <span class="label">Email:</span>
+                    <span class="value">{{ record.email }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Phone:</span>
+                    <span class="value">{{ record.phone }}</span>
+                </div>
+                <div class="info-row" style="flex-direction: column; align-items: flex-start;">
+                    <span class="label">Address:</span>
+                    <p class="value" style="margin-top: 0.25rem;">{{ record.address }}</p>
+                </div>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
+
     {% else %}
     <div class="card">
         <p style="text-align: center; color: var(--text-muted);">No information extracted. Please try again with valid medical bills.</p>
@@ -117,6 +246,7 @@
     <footer class="footer">
         <p>&copy; 2025 EmilY. Precision document analysis.</p>
     </footer>
+    </div>
 </div>
 
 </body>

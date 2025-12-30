@@ -1,0 +1,68 @@
+2025-12-30 20:19:54,007 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-30 20:19:54,007 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-30 20:19:54,010 - werkzeug - INFO -  * Restarting with stat
+2025-12-30 20:19:54,536 - werkzeug - WARNING -  * Debugger is active!
+2025-12-30 20:19:54,542 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-30 20:19:58,511 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:19:58] "GET / HTTP/1.1" 200 -
+2025-12-30 20:19:58,698 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:19:58] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-30 20:19:59,149 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:19:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-30 20:20:31,211 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:31] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-12-30 20:20:31,233 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:31] "GET /results HTTP/1.1" 200 -
+2025-12-30 20:20:31,259 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 20:20:37,735 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:37] "GET /timeline/P2002 HTTP/1.1" 200 -
+2025-12-30 20:20:37,750 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 20:20:47,239 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:47] "GET / HTTP/1.1" 200 -
+2025-12-30 20:20:47,260 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 20:20:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:20:54,730 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-30 21:20:54,730 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-30 21:20:54,732 - werkzeug - INFO -  * Restarting with stat
+2025-12-30 21:20:55,366 - werkzeug - WARNING -  * Debugger is active!
+2025-12-30 21:20:55,373 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-30 21:20:56,935 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:20:56] "GET / HTTP/1.1" 200 -
+2025-12-30 21:20:57,375 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:20:57] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-30 21:21:20,955 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:20] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-12-30 21:21:20,985 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:20] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:21:21,007 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:21] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:21:21,039 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:21:30,470 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:30] "GET / HTTP/1.1" 200 -
+2025-12-30 21:21:30,485 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:21:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:24:44,874 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-30 21:24:45,895 - werkzeug - INFO -  * Restarting with stat
+2025-12-30 21:24:48,661 - werkzeug - WARNING -  * Debugger is active!
+2025-12-30 21:24:48,726 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-30 21:25:03,731 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-30 21:25:05,143 - werkzeug - INFO -  * Restarting with stat
+2025-12-30 21:25:07,552 - werkzeug - WARNING -  * Debugger is active!
+2025-12-30 21:25:07,564 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-30 21:28:30,776 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-30 21:28:30,777 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-30 21:28:30,778 - werkzeug - INFO -  * Restarting with stat
+2025-12-30 21:28:31,549 - werkzeug - WARNING -  * Debugger is active!
+2025-12-30 21:28:31,556 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-30 21:28:34,920 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:34] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-30 21:28:35,062 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:35] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-30 21:28:35,305 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:28:54,471 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:54] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-30 21:28:54,483 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:54] "GET / HTTP/1.1" 200 -
+2025-12-30 21:28:54,500 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:28:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:29:25,286 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:29:25] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-12-30 21:29:25,308 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:29:25] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:29:25,327 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:29:25] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:29:25,355 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:29:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:33:36,449 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:36] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:33:36,468 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:36] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-30 21:33:41,125 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:41] "GET / HTTP/1.1" 200 -
+2025-12-30 21:33:41,145 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:33:51,426 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-12-30 21:33:51,432 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:51] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:33:51,448 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:51] "GET /results HTTP/1.1" 200 -
+2025-12-30 21:33:51,478 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:33:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:34:06,652 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:06] "GET / HTTP/1.1" 200 -
+2025-12-30 21:34:13,880 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:13] "GET / HTTP/1.1" 200 -
+2025-12-30 21:34:13,942 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-30 21:34:15,512 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-30 21:34:15,522 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "GET /login HTTP/1.1" 200 -
+2025-12-30 21:34:15,611 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -

@@ -49,6 +49,7 @@
     <div class="nav-links">
         <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
         <a href="/results" class="nav-link active"><i class="fas fa-file-medical-alt"></i> Results</a>
+        <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </nav>
 
@@ -73,14 +74,15 @@
         
         <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
             <form action="/" method="post" enctype="multipart/form-data" id="append-form" style="display: flex; align-items: center; gap: 0.5rem;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input type="file" name="files" id="append-file-input" accept=".pdf" multiple required style="display: none;" onchange="document.getElementById('append-form').submit()">
-                <button type="button" onclick="document.getElementById('append-file-input').click()" class="copy-btn" style="background-color: var(--secondary-color); color: white; border: none;">
+                <button type="button" onclick="document.getElementById('append-file-input').click()" class="copy-btn secondary-btn">
                     <i class="fas fa-plus-circle"></i> Upload More
                 </button>
             </form>
 
             {% if results %}
-            <a href="/timeline/{{ results[0].patient_id }}" class="copy-btn" style="text-decoration: none; background-color: var(--primary-color); color: white;">
+            <a href="/timeline/{{ results[0].patient_id }}" class="copy-btn primary-btn" style="text-decoration: none;">
                 <i class="fas fa-stream"></i> View Timeline
             </a>
             {% endif %}

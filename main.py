@@ -1,19 +1,54 @@
 import os
 import re
+import logging
+from typing import List, Dict, Any, Tuple, Optional
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 from werkzeug.utils import secure_filename
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_wtf.csrf import CSRFProtect
+from flask_talisman import Talisman
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email
+from flask_wtf import FlaskForm
+from dotenv import load_dotenv
 from extractionLogic import BillExtractor, ReportExtractor, PersonalExtractor
 
+# Load environment variables
+load_dotenv()
+
 app = Flask(__name__)
-app.secret_key = "supersecretkey"  # Needed for flash messages and sessions
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-secret-key-for-dev")
+
+# Security
+csrf = CSRFProtect(app)
+
+# Use HTTPS only in production as per guidelines
+is_prod = os.environ.get('FLASK_ENV') == 'production'
+Talisman(
+    app, 
+    content_security_policy=None, 
+    force_https=is_prod
+)  # Basic security headers, CSP disabled for simplicity in this demo
+
+# Logging setup
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("app.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 # Configure folders
-UPLOAD_FOLDER = 'uploads'
-REPORTS_FOLDER = 'reports'
-BILLINGS_FOLDER = 'billings'
-PERSONAL_FOLDER = 'personal_data'
+UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', 'uploads')
+REPORTS_FOLDER = os.environ.get('REPORTS_FOLDER', 'reports')
+BILLINGS_FOLDER = os.environ.get('BILLINGS_FOLDER', 'billings')
+PERSONAL_FOLDER = os.environ.get('PERSONAL_FOLDER', 'personal_data')
 ALLOWED_EXTENSIONS = {'pdf'}
-MAX_CONTENT_LENGTH = 10 * 1024 * 1024  # 10MB limit
+MAX_CONTENT_LENGTH = int(os.environ.get('MAX_CONTENT_LENGTH', 10 * 1024 * 1024))
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['REPORTS_FOLDER'] = REPORTS_FOLDER
@@ -31,11 +66,68 @@ bill_extractor = BillExtractor(UPLOAD_FOLDER)
 report_extractor = ReportExtractor()
 personal_extractor = PersonalExtractor()
 
-def allowed_file(filename):
+# User model for testing
+class User(UserMixin):
+    def __init__(self, id, email, password):
+        self.id = id
+        self.email = email
+        self.password = password
+
+# Mock user database
+users = {
+    "1": User("1", "provider@example.com", generate_password_hash("password123"))
+}
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return users.get(user_id)
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Sign In')
+
+def allowed_file(filename: str) -> bool:
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    logger.error(f"Internal Server Error: {e}")
+    return render_template('500.html'), 500
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('upload_file'))
+    
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = next((u for u in users.values() if u.email == form.email.data), None)
+        if user and check_password_hash(user.password, form.password.data):
+            login_user(user)
+            next_page = request.args.get('next')
+            return redirect(next_page or url_for('upload_file'))
+        else:
+            flash('Login Unsuccessful. Please check email and password', 'warning')
+    
+    return render_template('login.html', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
 @app.route('/', methods=['GET', 'POST'])
+@login_required
 def upload_file():
     if request.method == 'POST':
         # Check which files were uploaded
@@ -145,12 +237,14 @@ def upload_file():
     return render_template('index.html')
 
 @app.route('/results')
+@login_required
 def display_results():
     if 'extracted_results' not in session:
         return redirect(url_for('upload_file'))
     return render_template('results.html', results=session['extracted_results'])
 
 @app.route('/timeline/<patient_id>')
+@login_required
 def timeline(patient_id):
     timeline_events = []
     
@@ -180,4 +274,7 @@ def timeline(patient_id):
     return render_template('timeline.html', patient_id=patient_id, events=timeline_events)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8124)
+    # Never run with debug=True in production. 
+    # Use environment variable to determine debug mode.
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    app.run(debug=debug_mode, port=8124)

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - EmilY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .login-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 100px);
+            padding: 2rem;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 450px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .login-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .login-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+        .invalid-feedback {
+            color: var(--danger-color);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        .flash-messages {
+            margin-bottom: 1.5rem;
+        }
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .alert-warning {
+            background-color: #fef2f2;
+            color: var(--danger-color);
+            border: 1px solid #fee2e2;
+        }
+        .test-credentials {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--primary-light);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .test-credentials strong {
+            color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <a href="/" class="nav-brand">
+        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+    </a>
+</nav>
+
+<div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+</div>
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="logo">
+                <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
+            </div>
+            <h2>Provider Portal</h2>
+            <p>Please sign in to your account</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            <i class="fas fa-exclamation-circle"></i>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.email.label }}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid", placeholder="email@example.com") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-control", placeholder="email@example.com") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password.label }}
+                {% if form.password.errors %}
+                    {{ form.password(class="form-control is-invalid", placeholder="••••••••") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class="form-control", placeholder="••••••••") }}
+                {% endif %}
+            </div>
+            
+            {{ form.submit(class="submit-btn") }}
+        </form>
+
+        <div class="test-credentials">
+            <p><i class="fas fa-info-circle"></i> <strong>Testing Credentials:</strong></p>
+            <p>Email: provider@example.com</p>
+            <p>Password: password123</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 EmilY. Secure Healthcare Portal.</p>
+</footer>
+
+</body>
+</html>

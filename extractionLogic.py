@@ -1,16 +1,17 @@
 import os
 import re
+from typing import List, Dict, Any, Tuple, Optional
 from PyPDF2 import PdfReader
 
 class BillExtractor:
     """
     A class to handle medical bill PDF security verification and information extraction.
     """
-    def __init__(self, upload_folder):
+    def __init__(self, upload_folder: str):
         self.upload_folder = upload_folder
         self.allowed_extensions = {'pdf'}
         # Dictionary of common CPT codes and their descriptions
-        self.cpt_descriptions = {
+        self.cpt_descriptions: Dict[str, str] = {
             '32853': 'Lung transplant, bilateral',
             '99202': 'Office/outpatient visit, new patient, 15-29 min',
             '99203': 'Office/outpatient visit, new patient, 30-44 min',
@@ -38,7 +39,7 @@ class BillExtractor:
             '95810': 'Polysomnography; age 6 years or older, sleep staging with 4 or more additional parameters of sleep, attended by a technologist',
         }
 
-    def is_pdf_safe(self, filepath):
+    def is_pdf_safe(self, filepath: str) -> bool:
         """
         Perform basic security checks on the PDF.
         - Check if it can be opened and read by PyPDF2.
@@ -61,7 +62,7 @@ class BillExtractor:
         except Exception:
             return False
 
-    def extract_text(self, filepath):
+    def extract_text(self, filepath: str) -> str:
         """Extract all text from the PDF file."""
         try:
             reader = PdfReader(filepath)
@@ -74,9 +75,9 @@ class BillExtractor:
         except Exception as e:
             raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
-    def parse_bill_info(self, text):
+    def parse_bill_info(self, text: str) -> Dict[str, Any]:
         """Extract structured info from bill text using regex."""
-        data = {
+        data: Dict[str, Any] = {
             'provider': 'N/A',
             'npi': 'N/A',
             'inv': 'N/A',
@@ -136,7 +137,7 @@ class BillExtractor:
         
         return data
 
-    def process_pdf(self, filepath):
+    def process_pdf(self, filepath: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
         """High-level method to validate and extract info from a PDF file."""
         if not self.is_pdf_safe(filepath):
             return None, "File was rejected due to security concerns or corruption."
@@ -155,7 +156,7 @@ class ReportExtractor:
     def __init__(self):
         pass
 
-    def extract_text(self, filepath):
+    def extract_text(self, filepath: str) -> str:
         """Extract all text from the PDF file."""
         try:
             reader = PdfReader(filepath)
@@ -168,9 +169,9 @@ class ReportExtractor:
         except Exception as e:
             raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
-    def parse_report_info(self, text):
+    def parse_report_info(self, text: str) -> Dict[str, Any]:
         """Extract structured info from report text using regex."""
-        data = {
+        data: Dict[str, Any] = {
             'type': 'Clinical Report',
             'patient': 'N/A',
             'patient_id': 'N/A',
@@ -229,7 +230,7 @@ class ReportExtractor:
 
         return data
 
-    def process_pdf(self, filepath):
+    def process_pdf(self, filepath: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
         """High-level method to validate and extract info from a PDF report file."""
         try:
             text = self.extract_text(filepath)
@@ -245,7 +246,7 @@ class PersonalExtractor:
     def __init__(self):
         pass
 
-    def extract_text(self, filepath):
+    def extract_text(self, filepath: str) -> str:
         """Extract all text from the PDF file."""
         try:
             reader = PdfReader(filepath)
@@ -258,9 +259,9 @@ class PersonalExtractor:
         except Exception as e:
             raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
-    def parse_personal_info(self, text):
+    def parse_personal_info(self, text: str) -> Dict[str, Any]:
         """Extract structured info from personal record text using regex."""
-        data = {
+        data: Dict[str, Any] = {
             'type': 'Personal Record',
             'name': 'N/A',
             'patient_id': 'N/A',
@@ -294,7 +295,7 @@ class PersonalExtractor:
 
         return data
 
-    def process_pdf(self, filepath):
+    def process_pdf(self, filepath: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
         """High-level method to validate and extract info from a PDF personal record file."""
         try:
             text = self.extract_text(filepath)

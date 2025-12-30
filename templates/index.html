@@ -17,6 +17,7 @@
     <div class="nav-links">
         <a href="/" class="nav-link active"><i class="fas fa-home"></i> Home</a>
         <a href="/results" class="nav-link"><i class="fas fa-file-medical-alt"></i> Results</a>
+        <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </nav>
 
@@ -35,49 +36,60 @@
         </header>
 
     <form method="post" enctype="multipart/form-data" id="main-upload-form">
-        <div class="upload-panels" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; justify-content: center;">
-            <!-- Medical Bills Panel -->
-            <div class="card" style="margin-bottom: 0; flex: 1; min-width: 0;">
-                <h3 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-file-invoice-dollar"></i> Medical Bills</h3>
-                <div class="upload-section small-drop-zone" id="drop-zone-bill" onclick="document.getElementById('bill-input').click()">
-                    <i class="fas fa-cloud-upload-alt upload-icon" style="font-size: 2rem;"></i>
-                    <div class="upload-text">
-                        <p style="font-size: 0.9rem;">Upload Bills</p>
-                    </div>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        
+        <div class="upload-container-new">
+            <!-- Medical Bills Card -->
+            <div class="upload-card">
+                <div class="card-header">
+                    <h3 style="margin: 0; color: var(--primary-color); font-size: 1.1rem;">
+                        <i class="fas fa-file-invoice-dollar"></i> Medical Bills
+                    </h3>
+                </div>
+                <div class="drop-zone" id="drop-zone-bill" onclick="document.getElementById('bill-input').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drop bills here</p>
+                    <span>or click to browse</span>
                     <input type="file" name="bill_files" id="bill-input" class="file-input" accept=".pdf" multiple style="display: none;">
                 </div>
-                <div id="bill-file-list" class="file-list-mini" style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"></div>
+                <div id="bill-file-list" class="file-list"></div>
             </div>
 
-            <!-- Medical Records Panel -->
-            <div class="card" style="margin-bottom: 0; flex: 1; min-width: 0;">
-                <h3 style="margin-bottom: 1rem; color: var(--secondary-color);"><i class="fas fa-file-medical"></i> Medical Records</h3>
-                <div class="upload-section small-drop-zone" id="drop-zone-report" onclick="document.getElementById('report-input').click()">
-                    <i class="fas fa-cloud-upload-alt upload-icon" style="font-size: 2rem; color: var(--secondary-color);"></i>
-                    <div class="upload-text">
-                        <p style="font-size: 0.9rem;">Upload Reports</p>
-                    </div>
+            <!-- Medical Records Card -->
+            <div class="upload-card">
+                <div class="card-header">
+                    <h3 style="margin: 0; color: #10b981; font-size: 1.1rem;">
+                        <i class="fas fa-file-medical"></i> Medical Records
+                    </h3>
+                </div>
+                <div class="drop-zone" id="drop-zone-report" onclick="document.getElementById('report-input').click()">
+                    <i class="fas fa-cloud-upload-alt" style="color: #10b981;"></i>
+                    <p>Drop reports here</p>
+                    <span>or click to browse</span>
                     <input type="file" name="report_files" id="report-input" class="file-input" accept=".pdf" multiple style="display: none;">
                 </div>
-                <div id="report-file-list" class="file-list-mini" style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"></div>
+                <div id="report-file-list" class="file-list"></div>
             </div>
 
-            <!-- Personal Records Panel -->
-            <div class="card" style="margin-bottom: 0; flex: 1; min-width: 0;">
-                <h3 style="margin-bottom: 1rem; color: #6366f1;"><i class="fas fa-id-card"></i> Personal Records</h3>
-                <div class="upload-section small-drop-zone" id="drop-zone-personal" onclick="document.getElementById('personal-input').click()">
-                    <i class="fas fa-cloud-upload-alt upload-icon" style="font-size: 2rem; color: #6366f1;"></i>
-                    <div class="upload-text">
-                        <p style="font-size: 0.9rem;">Upload Personal Info</p>
-                    </div>
+            <!-- Personal Records Card -->
+            <div class="upload-card">
+                <div class="card-header">
+                    <h3 style="margin: 0; color: #6366f1; font-size: 1.1rem;">
+                        <i class="fas fa-id-card"></i> Personal Records
+                    </h3>
+                </div>
+                <div class="drop-zone" id="drop-zone-personal" onclick="document.getElementById('personal-input').click()">
+                    <i class="fas fa-cloud-upload-alt" style="color: #6366f1;"></i>
+                    <p>Drop personal info</p>
+                    <span>or click to browse</span>
                     <input type="file" name="personal_files" id="personal-input" class="file-input" accept=".pdf" multiple style="display: none;">
                 </div>
-                <div id="personal-file-list" class="file-list-mini" style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"></div>
+                <div id="personal-file-list" class="file-list"></div>
             </div>
         </div>
 
-        <div class="card" id="process-card" style="display: none;">
-            <div id="loading-container" class="loading-container" style="display: none; margin-bottom: 2rem;">
+        <div class="card" id="process-card" style="display: none; padding: 2rem;">
+            <div id="loading-container" class="loading-container" style="display: none; margin-bottom: 2rem; margin-top: 0;">
                 <div class="progress-info">
                     <span id="progress-text">Processing documents...</span>
                     <span id="progress-percentage">0%</span>
@@ -110,30 +122,82 @@
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoader = submitBtn.querySelector('.btn-loader');
 
-    function updateFileList(input, listId) {
+    // Store files in objects to manage them
+    let filesToUpload = {
+        'bill_files': [],
+        'report_files': [],
+        'personal_files': []
+    };
+
+    function updateFileList(field) {
+        const listId = field.replace('_files', '') + '-file-list';
         const list = document.getElementById(listId);
-        if (input.files.length > 0) {
-            list.innerHTML = `<ul style="list-style: none; padding: 0;">` + 
-                Array.from(input.files).map(f => `<li><i class="fas fa-file-pdf"></i> ${f.name}</li>`).join('') + 
-                `</ul>`;
+        const files = filesToUpload[field];
+        
+        if (files.length > 0) {
+            list.innerHTML = files.map((file, index) => `
+                <div class="file-item">
+                    <div class="file-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="file-name-text" title="${file.name}">${file.name}</span>
+                    </div>
+                    <i class="fas fa-times remove-file" onclick="removeFile('${field}', ${index})"></i>
+                </div>
+            `).join('');
             processCard.style.display = 'block';
         } else {
             list.innerHTML = '';
-            checkVisibility();
+            // Check if any files are left in any field
+            const totalFiles = Object.values(filesToUpload).reduce((acc, curr) => acc + curr.length, 0);
+            if (totalFiles === 0) {
+                processCard.style.display = 'none';
+            }
         }
     }
 
-    function checkVisibility() {
-        if (billInput.files.length === 0 && reportInput.files.length === 0 && personalInput.files.length === 0) {
-            processCard.style.display = 'none';
-        }
+    window.removeFile = function(field, index) {
+        filesToUpload[field].splice(index, 1);
+        updateFileList(field);
+    };
+
+    function handleFileSelect(e, field) {
+        const selectedFiles = Array.from(e.target.files);
+        filesToUpload[field] = [...filesToUpload[field], ...selectedFiles];
+        updateFileList(field);
     }
 
-    billInput.addEventListener('change', () => updateFileList(billInput, 'bill-file-list'));
-    reportInput.addEventListener('change', () => updateFileList(reportInput, 'report-file-list'));
-    personalInput.addEventListener('change', () => updateFileList(personalInput, 'personal-file-list'));
+    billInput.addEventListener('change', (e) => handleFileSelect(e, 'bill_files'));
+    reportInput.addEventListener('change', (e) => handleFileSelect(e, 'report_files'));
+    personalInput.addEventListener('change', (e) => handleFileSelect(e, 'personal_files'));
+
+    // Drag and Drop
+    ['bill', 'report', 'personal'].forEach(type => {
+        const zone = document.getElementById(`drop-zone-${type}`);
+
+        zone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            zone.classList.add('drag-over');
+        });
+
+        zone.addEventListener('dragleave', () => {
+            zone.classList.remove('drag-over');
+        });
+
+        zone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            zone.classList.remove('drag-over');
+            const files = Array.from(e.dataTransfer.files).filter(f => f.type === 'application/pdf');
+            if (files.length > 0) {
+                const field = `${type}_files`;
+                filesToUpload[field] = [...filesToUpload[field], ...files];
+                updateFileList(field);
+            }
+        });
+    });
 
     mainForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
         btnText.style.display = 'none';
         btnLoader.style.display = 'inline-block';
         submitBtn.disabled = true;
@@ -145,66 +209,64 @@
         const progressPercentage = document.getElementById('progress-percentage');
         loadingContainer.style.display = 'block';
 
-        let width = 0;
-        const interval = setInterval(() => {
-            if (width >= 95) {
-                clearInterval(interval);
-            } else {
-                width += Math.random() * 15;
-                if (width > 95) width = 95;
-                progressBar.style.width = width + '%';
-                progressPercentage.innerText = Math.round(width) + '%';
-            }
-        }, 150);
-    });
-
-    // Drag and Drop support
-    function setupDropZone(zoneId, inputId) {
-        const zone = document.getElementById(zoneId);
-        const input = document.getElementById(inputId);
-
-        ['dragover', 'dragleave', 'drop'].forEach(eventName => {
-            zone.addEventListener(eventName, e => {
-                e.preventDefault();
-                e.stopPropagation();
+        // Re-construct FormData with our managed files
+        const formData = new FormData();
+        formData.append('csrf_token', document.getElementsByName('csrf_token')[0].value);
+    
+        for (const [field, files] of Object.entries(filesToUpload)) {
+            files.forEach(file => {
+                formData.append(field, file);
             });
-        });
+        }
 
-        zone.addEventListener('dragover', () => zone.classList.add('drag-over'));
-        zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-        zone.addEventListener('drop', (e) => {
-            zone.classList.remove('drag-over');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                const allPDF = Array.from(files).every(file => file.type === 'application/pdf');
-                if (allPDF) {
-                    input.files = files;
-                    updateFileList(input, zoneId.replace('drop-zone-', '') + '-file-list');
-                } else {
-                    alert('Please upload PDF files only.');
-                }
+        // Use XMLHttpRequest for progress tracking
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/', true);
+    
+        xhr.upload.onprogress = (e) => {
+            if (e.lengthComputable) {
+                const percentComplete = Math.round((e.loaded / e.total) * 100);
+                // Since processing happens on server after upload, 
+                // we'll use first 50% for upload and rest for "fake" processing
+                const displayPercent = Math.round(percentComplete * 0.5);
+                progressBar.style.width = displayPercent + '%';
+                progressPercentage.innerText = displayPercent + '%';
             }
-        });
-    }
+        };
 
-    setupDropZone('drop-zone-bill', 'bill-input');
-    setupDropZone('drop-zone-report', 'report-input');
-    setupDropZone('drop-zone-personal', 'personal-input');
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                // If it's a redirect, follow it
+                if (xhr.responseURL) {
+                    window.location.href = xhr.responseURL;
+                } else {
+                    window.location.href = '/results';
+                }
+            } else {
+                alert('An error occurred during processing.');
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+                loadingContainer.style.display = 'none';
+            }
+        };
 
-    function copyToClipboard() {
-        const text = document.getElementById('result-text').innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            const copyBtn = document.querySelector('.copy-btn');
-            const originalHTML = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            copyBtn.classList.add('success');
-            setTimeout(() => {
-                copyBtn.innerHTML = originalHTML;
-                copyBtn.classList.remove('success');
-            }, 2000);
-        });
-    }
-</script>
+        // Fake the remaining progress during server processing
+        let processProgress = 50;
+        const interval = setInterval(() => {
+            if (processProgress < 95) {
+                processProgress += Math.random() * 5;
+                const displayPercent = Math.round(processProgress);
+                progressBar.style.width = displayPercent + '%';
+                progressPercentage.innerText = displayPercent + '%';
+            } else {
+                clearInterval(interval);
+            }
+        }, 500);
+
+        xhr.send(formData);
+    });
+    </script>
 
 </body>
 </html>

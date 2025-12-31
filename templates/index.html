@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmilY</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>EmilY - Modern Healthcare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -32,79 +33,128 @@
             <div class="logo">
                 <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
             </div>
-            <p class="subtitle">Enhanced medical intelligence for logical yield</p>
+            <p class="subtitle">Provider Portal - Medical Intelligence</p>
         </header>
 
-    <form method="post" enctype="multipart/form-data" id="main-upload-form">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-        
-        <div class="upload-container-new">
-            <!-- Medical Bills Card -->
-            <div class="upload-card">
-                <div class="card-header">
-                    <h3 style="margin: 0; color: var(--primary-color); font-size: 1.1rem;">
-                        <i class="fas fa-file-invoice-dollar"></i> Medical Bills
-                    </h3>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages" style="margin-bottom: 2rem;">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" style="padding: 1rem; border-radius: 0.75rem; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle"></i>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="drop-zone" id="drop-zone-bill" onclick="document.getElementById('bill-input').click()">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drop bills here</p>
-                    <span>or click to browse</span>
-                    <input type="file" name="bill_files" id="bill-input" class="file-input" accept=".pdf" multiple style="display: none;">
-                </div>
-                <div id="bill-file-list" class="file-list"></div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <div class="left-col">
+                <form method="post" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" id="main-upload-form">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    
+                    <div class="upload-container-new">
+                        <!-- Medical Bills Card -->
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <h3 style="margin: 0; color: var(--primary-color); font-size: 1.1rem;">
+                                    <i class="fas fa-file-invoice-dollar"></i> Medical Bills
+                                </h3>
+                            </div>
+                            <div class="drop-zone" id="drop-zone-bill" onclick="document.getElementById('bill-input').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drop bills here</p>
+                                <span>or click to browse</span>
+                                <input type="file" name="bill_files" id="bill-input" class="file-input" accept=".pdf" multiple style="display: none;">
+                            </div>
+                            <div id="bill-file-list" class="file-list"></div>
+                        </div>
+
+                        <!-- Medical Records Card -->
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <h3 style="margin: 0; color: #10b981; font-size: 1.1rem;">
+                                    <i class="fas fa-file-medical"></i> Medical Records
+                                </h3>
+                            </div>
+                            <div class="drop-zone" id="drop-zone-report" onclick="document.getElementById('report-input').click()">
+                                <i class="fas fa-cloud-upload-alt" style="color: #10b981;"></i>
+                                <p>Drop reports here</p>
+                                <span>or click to browse</span>
+                                <input type="file" name="report_files" id="report-input" class="file-input" accept=".pdf" multiple style="display: none;">
+                            </div>
+                            <div id="report-file-list" class="file-list"></div>
+                        </div>
+
+                        <!-- Personal Records Card (for auto-filling) -->
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <h3 style="margin: 0; color: #6366f1; font-size: 1.1rem;">
+                                    <i class="fas fa-id-card"></i> Auto-fill Patient Info
+                                </h3>
+                            </div>
+                            <div class="drop-zone" id="drop-zone-personal" onclick="document.getElementById('personal-input').click()">
+                                <i class="fas fa-magic" style="color: #6366f1;"></i>
+                                <p>Drop patient profile</p>
+                                <span>to auto-fill details</span>
+                                <input type="file" name="personal_files" id="personal-input" class="file-input" accept=".pdf" multiple style="display: none;">
+                            </div>
+                            <div id="personal-file-list" class="file-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="process-card" style="display: none; padding: 2rem;">
+                        <div id="loading-container" class="loading-container" style="display: none; margin-bottom: 2rem; margin-top: 0;">
+                            <div class="progress-info">
+                                <span id="progress-text">Processing documents...</span>
+                                <span id="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div id="progress-bar" class="progress-bar"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <span class="btn-text"><i class="fas fa-magic"></i> Process Documents</span>
+                            <span class="btn-loader" style="display: none;"><i class="fas fa-circle-notch fa-spin"></i> Processing...</span>
+                        </button>
+                    </div>
+                </form>
             </div>
 
-            <!-- Medical Records Card -->
-            <div class="upload-card">
-                <div class="card-header">
-                    <h3 style="margin: 0; color: #10b981; font-size: 1.1rem;">
-                        <i class="fas fa-file-medical"></i> Medical Records
-                    </h3>
+            <div class="right-col">
+                <div class="card" style="padding: 1.5rem;">
+                    <div class="card-header" style="margin-bottom: 1.5rem;">
+                        <h3 style="margin: 0;"><i class="fas fa-user-plus"></i> Manual Patient Entry</h3>
+                    </div>
+                    <form method="POST" action="{{ url_for('provider_dashboard') }}">
+                        {{ form.hidden_tag() }}
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">{{ form.name.label }}*</label>
+                            {{ form.name(class="form-control", style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 0.5rem;") }}
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">{{ form.dob.label }}* (YYYY-MM-DD)</label>
+                            {{ form.dob(class="form-control", style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 0.5rem;") }}
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">{{ form.insurance_policy_id.label }}*</label>
+                            {{ form.insurance_policy_id(class="form-control", style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 0.5rem;") }}
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">{{ form.email.label }}</label>
+                            {{ form.email(class="form-control", style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 0.5rem;") }}
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">{{ form.refund_bank_account_id.label }}</label>
+                            {{ form.refund_bank_account_id(class="form-control", style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 0.5rem;") }}
+                        </div>
+                        {{ form.submit(class="submit-btn", style="width: 100%; padding: 0.75rem;") }}
+                    </form>
                 </div>
-                <div class="drop-zone" id="drop-zone-report" onclick="document.getElementById('report-input').click()">
-                    <i class="fas fa-cloud-upload-alt" style="color: #10b981;"></i>
-                    <p>Drop reports here</p>
-                    <span>or click to browse</span>
-                    <input type="file" name="report_files" id="report-input" class="file-input" accept=".pdf" multiple style="display: none;">
-                </div>
-                <div id="report-file-list" class="file-list"></div>
-            </div>
-
-            <!-- Personal Records Card -->
-            <div class="upload-card">
-                <div class="card-header">
-                    <h3 style="margin: 0; color: #6366f1; font-size: 1.1rem;">
-                        <i class="fas fa-id-card"></i> Personal Records
-                    </h3>
-                </div>
-                <div class="drop-zone" id="drop-zone-personal" onclick="document.getElementById('personal-input').click()">
-                    <i class="fas fa-cloud-upload-alt" style="color: #6366f1;"></i>
-                    <p>Drop personal info</p>
-                    <span>or click to browse</span>
-                    <input type="file" name="personal_files" id="personal-input" class="file-input" accept=".pdf" multiple style="display: none;">
-                </div>
-                <div id="personal-file-list" class="file-list"></div>
             </div>
         </div>
-
-        <div class="card" id="process-card" style="display: none; padding: 2rem;">
-            <div id="loading-container" class="loading-container" style="display: none; margin-bottom: 2rem; margin-top: 0;">
-                <div class="progress-info">
-                    <span id="progress-text">Processing documents...</span>
-                    <span id="progress-percentage">0%</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div id="progress-bar" class="progress-bar"></div>
-                </div>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submit-btn">
-                <span class="btn-text"><i class="fas fa-magic"></i> Process Documents</span>
-                <span class="btn-loader" style="display: none;"><i class="fas fa-circle-notch fa-spin"></i> Processing...</span>
-            </button>
-        </div>
-    </form>
 
     <footer class="footer">
         <p>&copy; 2025 EmilY. Precision document analysis.</p>
@@ -221,7 +271,7 @@
 
         // Use XMLHttpRequest for progress tracking
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/', true);
+        xhr.open('POST', '{{ url_for("upload_file") }}', true);
     
         xhr.upload.onprogress = (e) => {
             if (e.lengthComputable) {
@@ -236,11 +286,11 @@
 
         xhr.onload = () => {
             if (xhr.status === 200) {
-                // If it's a redirect, follow it
+                // Check if we should redirect or stay (handled by server responseURL)
                 if (xhr.responseURL) {
                     window.location.href = xhr.responseURL;
                 } else {
-                    window.location.href = '/results';
+                    window.location.href = '/provider';
                 }
             } else {
                 alert('An error occurred during processing.');

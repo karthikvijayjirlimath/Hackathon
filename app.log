@@ -66,3 +66,93 @@
 2025-12-30 21:34:15,512 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "[32mGET /logout HTTP/1.1[0m" 302 -
 2025-12-30 21:34:15,522 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "GET /login HTTP/1.1" 200 -
 2025-12-30 21:34:15,611 - werkzeug - INFO - 127.0.0.1 - - [30/Dec/2025 21:34:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 10:48:59,570 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 10:48:59,571 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 10:48:59,575 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 10:49:00,682 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 10:49:00,689 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 10:49:04,412 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:04] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 10:49:04,487 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:04] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 10:49:04,644 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 10:49:05,034 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 10:49:29,276 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:29] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-31 10:49:29,283 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:29] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 10:49:29,308 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:29] "GET /provider HTTP/1.1" 200 -
+2025-12-31 10:49:29,331 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 10:49:40,148 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-31 10:49:40,164 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:40] "GET /login HTTP/1.1" 200 -
+2025-12-31 10:49:40,190 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 10:49:55,303 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-31 10:49:55,309 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:55] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 10:49:55,323 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:55] "GET /patient HTTP/1.1" 200 -
+2025-12-31 10:49:55,353 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:49:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 10:50:21,010 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:50:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-31 10:50:21,021 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:50:21] "GET /login HTTP/1.1" 200 -
+2025-12-31 10:50:21,096 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 10:50:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:21:06,689 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 11:21:06,690 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 11:21:07,674 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 11:21:07,690 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 11:21:07,703 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 11:21:09,626 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 11:21:09,626 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 11:21:10,964 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 11:21:10,982 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 11:21:25,204 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:25] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:21:25,693 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:25] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 11:21:25,978 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:25] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-31 11:21:26,438 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 11:21:46,005 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-31 11:21:46,014 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:21:46,066 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "[35m[1mGET /provider HTTP/1.1[0m" 500 -
+2025-12-31 11:21:46,143 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "GET /provider?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-31 11:21:46,145 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "GET /provider?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-31 11:21:46,168 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "GET /provider?__debugger__=yes&cmd=resource&f=console.png&s=bdqyHJWZGQJnKA30E5Wb HTTP/1.1" 200 -
+2025-12-31 11:21:46,312 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:21:46] "GET /provider?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-31 11:23:51,107 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 11:23:51,107 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 11:23:51,754 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 11:23:51,754 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 11:23:51,756 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 11:23:53,010 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 11:23:53,010 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 11:23:54,259 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 11:23:54,265 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 11:23:54,316 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:23:54] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:23:54,333 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:23:54] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 11:23:54,521 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:23:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:23:54,890 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:23:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 11:24:16,686 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:16] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-31 11:24:16,694 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:16] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:24:16,739 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:16] "[35m[1mGET /provider HTTP/1.1[0m" 500 -
+2025-12-31 11:24:16,781 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:16] "[36mGET /provider?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-31 11:24:16,795 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:16] "[36mGET /provider?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-31 11:24:17,007 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:24:17] "GET /provider?__debugger__=yes&cmd=resource&f=console.png&s=RkVFlKrGY6cTq8nD45r4 HTTP/1.1" 200 -
+2025-12-31 11:25:40,770 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 11:25:41,359 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 11:25:51,382 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 11:25:51,383 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 11:25:57,098 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 11:25:57,128 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 11:26:23,896 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:23] "GET /provider HTTP/1.1" 200 -
+2025-12-31 11:26:24,184 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:26:32,140 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-31 11:26:32,168 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:32] "GET /login HTTP/1.1" 200 -
+2025-12-31 11:26:32,185 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:26:45,256 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-31 11:26:45,262 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:45] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:26:45,271 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:45] "GET /payer HTTP/1.1" 200 -
+2025-12-31 11:26:45,291 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:26:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:27:12,682 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:12] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:27:12,695 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:12] "GET /payer HTTP/1.1" 200 -
+2025-12-31 11:27:12,718 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:27:14,882 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:14] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-31 11:27:14,891 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:14] "GET /login HTTP/1.1" 200 -
+2025-12-31 11:27:14,908 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 11:27:27,787 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-31 11:27:27,792 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 11:27:27,804 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "GET /patient HTTP/1.1" 200 -
+2025-12-31 11:27:27,820 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -

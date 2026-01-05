@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History - {{ patient.user.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .status-paid { background: #dcfce7; color: #166534; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        
+        .history-card {
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .history-card:hover {
+            transform: translateX(5px);
+        }
+        .record-type-badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <a href="/" class="nav-brand">
+        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+    </a>
+    <div class="nav-links">
+        <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</nav>
+
+<div class="main-wrapper">
+    <div class="container" style="max-width: 1100px;">
+        <header class="header">
+            <h1 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em;">Patient Intelligence</h1>
+            <p class="subtitle">Detailed Medical & Financial Records</p>
+        </header>
+
+        <div class="row" style="margin-top: 2rem;">
+            <!-- Patient Info Sidebar -->
+            <div class="col-lg-4">
+                <div class="card" style="padding: 2rem; position: sticky; top: 100px;">
+                    <div class="text-center" style="margin-bottom: 2rem;">
+                        <div style="width: 80px; height: 80px; background: var(--primary-light); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin: 0;">{{ patient.user.name }}</h2>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">ID: {{ patient.patient_external_id }}</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-calendar-alt" style="color: var(--text-muted); width: 20px;"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Date of Birth</div>
+                                <div style="font-weight: 600;">{{ decrypt_data(patient.dob_encrypted) }}</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-shield-alt" style="color: var(--text-muted); width: 20px;"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Insurance Policy</div>
+                                <div style="font-weight: 600;">{{ patient.insurance_policy_id }}</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-envelope" style="color: var(--text-muted); width: 20px;"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Email Address</div>
+                                <div style="font-weight: 600;">{{ patient.user.email }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr style="margin: 2rem 0; opacity: 0.1;">
+                    
+                    <a href="{{ url_for('timeline', patient_id=patient.patient_external_id) }}" class="submit-btn" style="text-decoration: none; font-size: 0.95rem; padding: 0.75rem; margin-bottom: 1rem; background: var(--primary-color);">
+                        <i class="fas fa-stream"></i> View Medical Timeline
+                    </a>
+
+                    {% if is_patient_view %}
+                    <a href="{{ url_for('patient_dashboard') }}" class="submit-btn" style="text-decoration: none; font-size: 0.95rem; padding: 0.75rem; background: var(--secondary-color);">
+                        <i class="fas fa-chevron-left"></i> Back to Dashboard
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('provider_patients_list') }}" class="submit-btn" style="text-decoration: none; font-size: 0.95rem; padding: 0.75rem;">
+                        <i class="fas fa-chevron-left"></i> Back to Patient List
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-lg-8">
+                <!-- Medical History -->
+                <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+                    <div class="card-header" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; padding: 0;">
+                        <h3 style="margin: 0; font-weight: 700;"><i class="fas fa-notes-medical" style="color: #10b981;"></i> Medical History</h3>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">{{ patient.clinical_records|length }} Records found</span>
+                    </div>
+
+                    {% if patient.clinical_records %}
+                        {% for record in patient.clinical_records|sort(attribute='date', reverse=True) %}
+                        <div class="history-card" style="padding: 1.25rem; background: #fafafa; border-radius: 0.75rem; border: 1px solid var(--border-color); border-left: 4px solid #10b981;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+                                <div>
+                                    <span class="record-type-badge">{{ record.record_type }}</span>
+                                    <h4 style="margin: 0.5rem 0 0; font-size: 1.1rem; font-weight: 700;">{{ record.summary[:50] }}{% if record.summary|length > 50 %}...{% endif %}</h4>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-main);">{{ record.date.strftime('%b %d, %Y') if record.date else 'N/A' }}</div>
+                                    <a href="#" style="font-size: 0.8rem; color: var(--primary-color); text-decoration: none;"><i class="fas fa-file-pdf"></i> View Source</a>
+                                </div>
+                            </div>
+                            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">{{ record.summary }}</p>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center" style="padding: 3rem 0;">
+                            <i class="fas fa-folder-open" style="font-size: 3rem; color: var(--border-color); margin-bottom: 1rem;"></i>
+                            <p style="color: var(--text-muted);">No clinical records available for this patient.</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Financial Records -->
+                <div class="card" style="padding: 2rem;">
+                    <div class="card-header" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; padding: 0;">
+                        <h3 style="margin: 0; font-weight: 700;"><i class="fas fa-credit-card" style="color: var(--primary-color);"></i> Billing & Claims</h3>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead style="background: var(--primary-light);">
+                                <tr>
+                                    <th style="border: none; border-radius: 0.5rem 0 0 0.5rem;">Invoice</th>
+                                    <th style="border: none;">Date</th>
+                                    <th style="border: none;">Amount</th>
+                                    <th style="border: none; border-radius: 0 0.5rem 0.5rem 0;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if patient.bills %}
+                                    {% for bill in patient.bills|sort(attribute='date', reverse=True) %}
+                                    <tr>
+                                        <td style="vertical-align: middle; font-weight: 600;">{{ bill.invoice_number }}</td>
+                                        <td style="vertical-align: middle;">{{ bill.date.strftime('%Y-%m-%d') if bill.date else 'N/A' }}</td>
+                                        <td style="vertical-align: middle; font-weight: 700;">${{ "%.2f"|format(bill.amount) }}</td>
+                                        <td style="vertical-align: middle;">
+                                            <span class="status-badge {% if bill.status.value == 'Paid' %}status-paid{% else %}status-pending{% endif %}">
+                                                {{ bill.status.value }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="4" class="text-center" style="padding: 2rem 0; color: var(--text-muted);">No billing history found.</td>
+                                    </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center;">
+    <p style="color: var(--text-muted);">&copy; 2025 EmilY. Medical Intelligence & Billing Systems.</p>
+</footer>
+
+</body>
+</html>

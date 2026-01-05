@@ -57,6 +57,18 @@
             <p class="subtitle">Patient Portal</p>
         </header>
 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages" style="margin-bottom: 2rem;">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" style="padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border-color); margin-bottom: 1rem;">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
         <div class="dashboard-container">
             <!-- Details Card -->
             <div class="card">
@@ -95,6 +107,20 @@
                     </div>
                     {% endfor %}
                 </div>
+            </div>
+
+            <!-- New View Records Card -->
+            <div class="card" style="grid-column: span 2; padding: 2rem; text-align: center; border-top: 4px solid var(--primary-color);">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                    <i class="fas fa-file-medical" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                    <h2 style="margin: 0; font-weight: 800;">My Medical Intelligence</h2>
+                </div>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    View your complete medical journey, extracted clinical insights, and billing history in one secure location.
+                </p>
+                <a href="{{ url_for('patient_history') }}" class="submit-btn" style="text-decoration: none; display: inline-flex; width: auto; padding: 1rem 3rem; font-size: 1.2rem;">
+                    <i class="fas fa-eye"></i> View My Records
+                </a>
             </div>
         </div>
     </div>

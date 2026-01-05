@@ -306,6 +306,91 @@ body {
     filter: grayscale(0.5);
 }
 
+/* Modern Datepicker Styling */
+.modern-datepicker-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.datepicker-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--primary-color);
+    pointer-events: none;
+    font-size: 1rem;
+    z-index: 5;
+    transition: color 0.3s ease;
+}
+
+.modern-datepicker {
+    width: 100%;
+    padding: 0.625rem 1rem 0.625rem 2.75rem !important;
+    border: 1.5px solid var(--border-color) !important;
+    border-radius: 0.75rem !important;
+    background-color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 0.95rem !important;
+    color: var(--text-main) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    outline: none !important;
+}
+
+.modern-datepicker:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 4px var(--primary-light) !important;
+    background-color: #ffffff !important;
+}
+
+.modern-datepicker:hover {
+    border-color: var(--primary-color);
+}
+
+/* Custom calendar icon color change on focus */
+.modern-datepicker-container:focus-within .datepicker-icon {
+    color: var(--primary-hover);
+}
+
+/* Flatpickr Custom Styling to match theme */
+.flatpickr-calendar {
+    background: #ffffff !important;
+    box-shadow: var(--shadow-xl) !important;
+    border-radius: 1rem !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.selected:hover {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary-color) !important;
+}
+
+.flatpickr-day.today:hover {
+    background: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    font-weight: 700 !important;
+}
+
+.flatpickr-day:hover {
+    background: var(--primary-light) !important;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg, 
+.flatpickr-months .flatpickr-next-month:hover svg {
+    fill: var(--primary-color) !important;
+}
+
 /* Results Section */
 .result-container {
     margin-top: 3rem;

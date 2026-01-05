@@ -7,11 +7,11 @@ class BillExtractor:
     """
     A class to handle medical bill PDF security verification and information extraction.
     """
-    def __init__(self, upload_folder: str):
+    def __init__(self, upload_folder: str, cpt_descriptions: Optional[Dict[str, str]] = None):
         self.upload_folder = upload_folder
         self.allowed_extensions = {'pdf'}
-        # Dictionary of common CPT codes and their descriptions
-        self.cpt_descriptions: Dict[str, str] = {
+        # Default dictionary of common CPT codes and their descriptions if none provided
+        self.cpt_descriptions = cpt_descriptions or {
             '32853': 'Lung transplant, bilateral',
             '99202': 'Office/outpatient visit, new patient, 15-29 min',
             '99203': 'Office/outpatient visit, new patient, 30-44 min',
@@ -127,6 +127,15 @@ class BillExtractor:
             data['cpt_codes'] = [
                 {'code': code, 'desc': self.cpt_descriptions.get(code, 'Medical Procedure')}
                 for code in unique_codes
+            ]
+        
+        # Extract HCPCS codes (Letter followed by 4 digits)
+        hcpcs_matches = re.findall(r'\b([A-Z]\d{4})\b', text)
+        if hcpcs_matches:
+            unique_hcpcs = sorted(list(set(hcpcs_matches)))
+            data['hcpcs_codes'] = [
+                {'code': code, 'desc': 'Medical Supply/Service'}
+                for code in unique_hcpcs
             ]
         
         total_match = re.search(r'TOTAL CHARGES:\s*\n?\s*\$?(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)', text)

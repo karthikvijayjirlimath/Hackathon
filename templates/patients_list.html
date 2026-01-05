@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Patients - EmilY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<nav class="top-nav">
+    <a href="/" class="nav-brand">
+        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+    </a>
+    <div class="nav-links">
+        <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('provider_patients_list') }}" class="nav-link active"><i class="fas fa-users"></i> Patients</a>
+        <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</nav>
+
+<div class="main-wrapper">
+    <div class="container" style="max-width: 1000px;">
+        <header class="header">
+            <h1 style="font-weight: 800; letter-spacing: -0.04em;">Registered Patients</h1>
+            <p class="subtitle">Complete Healthcare Directory</p>
+        </header>
+
+        <div class="card" style="padding: 1.5rem; margin-top: 2rem;">
+            <div class="card-header" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; padding: 0;">
+                <h3 style="margin: 0;"><i class="fas fa-users"></i> Patient Database</h3>
+                <a href="{{ url_for('provider_dashboard') }}" class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-plus"></i> Add New Patient
+                </a>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color);">
+                            <th style="padding: 1rem; text-align: left;">External ID</th>
+                            <th style="padding: 1rem; text-align: left;">Full Name</th>
+                            <th style="padding: 1rem; text-align: left;">Insurance Policy</th>
+                            <th style="padding: 1rem; text-align: left;">Email</th>
+                            <th style="padding: 1rem; text-align: right;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for patient in patients %}
+                        <tr style="border-bottom: 1px solid var(--border-color); vertical-align: middle;">
+                            <td style="padding: 1rem;"><code style="background: var(--primary-light); color: var(--primary-color); padding: 0.2rem 0.5rem; border-radius: 0.25rem;">{{ patient.patient_external_id }}</code></td>
+                            <td style="padding: 1rem; font-weight: 600;">{{ patient.user.name }}</td>
+                            <td style="padding: 1rem;">{{ patient.insurance_policy_id }}</td>
+                            <td style="padding: 1rem; color: var(--text-muted); font-size: 0.9rem;">{{ patient.user.email }}</td>
+                            <td style="padding: 1rem; text-align: right;">
+                                <div class="btn-group">
+                                    <a href="{{ url_for('provider_patient_detail', patient_id=patient.patient_external_id) }}" class="btn btn-sm btn-primary primary-btn" style="padding: 0.4rem 1rem; border-radius: 0.5rem 0 0 0.5rem; font-size: 0.85rem;">
+                                        <i class="fas fa-eye"></i> View Intelligence
+                                    </a>
+                                    <a href="{{ url_for('timeline', patient_id=patient.patient_external_id) }}" class="btn btn-sm btn-outline-primary" style="padding: 0.4rem 1rem; border-radius: 0 0.5rem 0.5rem 0; font-size: 0.85rem; border-left: none;">
+                                        <i class="fas fa-stream"></i> Timeline
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% if not patients %}
+                        <tr>
+                            <td colspan="5" style="padding: 3rem; text-align: center; color: var(--text-muted);">
+                                <i class="fas fa-user-slash" style="font-size: 2rem; display: block; margin-bottom: 1rem;"></i>
+                                No patients registered yet.
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="{{ url_for('provider_dashboard') }}" class="back-link"><i class="fas fa-chevron-left"></i> Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 EmilY. Medical Records Management.</p>
+</footer>
+
+</body>
+</html>

@@ -156,3 +156,510 @@
 2025-12-31 11:27:27,792 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "[32mGET / HTTP/1.1[0m" 302 -
 2025-12-31 11:27:27,804 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "GET /patient HTTP/1.1" 200 -
 2025-12-31 11:27:27,820 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 11:27:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:01:04,372 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:01:04,373 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:01:04,378 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:01:56,685 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:01:56,686 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:01:56,688 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:02:42,839 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:02:42,839 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:02:42,841 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:04:22,351 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:04:22,352 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:04:22,358 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:05:19,428 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:05:19,430 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:05:19,440 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:08:49,813 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:08:49,813 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:08:49,814 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:08:49,888 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 19:08:49,888 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 19:08:49,890 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:08:51,305 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:08:51,306 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:08:51,307 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:08:51,393 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:08:51,402 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:08:55,551 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:08:55] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 19:08:55,655 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:08:55] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 19:08:55,887 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:08:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:08:56,230 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:08:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 19:09:07,309 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:07] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-31 19:09:07,319 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:07] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 19:09:07,342 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:07] "GET /provider HTTP/1.1" 200 -
+2025-12-31 19:09:07,361 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:09:30,098 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:30] "[32mPOST /provider/upload HTTP/1.1[0m" 302 -
+2025-12-31 19:09:30,118 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:30] "[35m[1mGET /results HTTP/1.1[0m" 500 -
+2025-12-31 19:09:46,832 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:46] "[32mPOST /provider/upload HTTP/1.1[0m" 302 -
+2025-12-31 19:09:46,849 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:09:46] "[35m[1mGET /results HTTP/1.1[0m" 500 -
+2025-12-31 19:10:53,051 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:10:53,051 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:10:53,054 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:11:04,996 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 19:11:08,636 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:11:13,956 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:11:13,956 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:11:13,962 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:11:14,169 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:11:14,183 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:11:17,750 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 19:11:18,561 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:11:27,151 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:11:27,151 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:11:27,172 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:11:27,353 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:11:27,379 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:11:39,353 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:11:39,354 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:11:39,356 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:12:01,462 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\reproduce_bug.py', reloading
+2025-12-31 19:12:01,816 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:12:04,557 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:12:04,558 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:12:04,560 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:12:04,641 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:12:04,652 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:12:20,415 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:12:20,416 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:12:20,459 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:12:26,306 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\reproduce_bug.py', reloading
+2025-12-31 19:12:26,871 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:12:37,330 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:12:37,331 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:12:37,334 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:12:37,750 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:12:37,790 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:12:48,367 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:12:48,368 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:12:48,371 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:13:08,327 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:13:08,328 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:13:08,332 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:13:33,135 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 19:13:33,461 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:13:37,428 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:13:37,429 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:13:37,432 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:13:37,509 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:13:37,521 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:13:49,497 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:13:49,498 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:13:49,500 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:13:56,219 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 19:13:56,742 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:13:58,858 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:13:58,859 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:13:58,862 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:13:58,933 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:13:58,946 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:14:02,871 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:14:02,872 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:14:02,873 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:14:34,750 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 19:14:37,771 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:14:40,462 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:14:40,462 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:14:40,465 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:14:40,525 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:14:40,534 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:14:41,804 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 19:14:42,711 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 19:14:52,483 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:14:52,484 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:14:52,486 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:14:52,566 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 19:14:52,576 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 19:14:58,782 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:14:58,782 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:14:58,786 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:15:12,418 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 19:15:12,420 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 19:15:12,422 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 19:15:44,482 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:15:44] "GET /provider HTTP/1.1" 200 -
+2025-12-31 19:15:44,669 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:15:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:16:13,842 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:13] "[32mPOST /provider/upload HTTP/1.1[0m" 302 -
+2025-12-31 19:16:13,870 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:13] "GET /results HTTP/1.1" 200 -
+2025-12-31 19:16:13,898 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:13] "GET /results HTTP/1.1" 200 -
+2025-12-31 19:16:14,049 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:16:51,188 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 19:16:51,284 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 19:16:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-12-31 20:30:19,381 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:30:19,381 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:30:19,382 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:30:19,445 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 20:30:19,445 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 20:30:19,447 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:30:20,679 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:30:20,680 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:30:20,681 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:30:20,728 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:30:20,736 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:30:23,565 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 20:30:23,573 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 20:30:23,615 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "GET /provider HTTP/1.1" 200 -
+2025-12-31 20:30:23,640 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "GET /provider HTTP/1.1" 200 -
+2025-12-31 20:30:23,812 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 20:30:23,826 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:30:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 20:31:10,867 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:31:10] "POST /provider HTTP/1.1" 200 -
+2025-12-31 20:31:10,885 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:31:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 20:34:57,197 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 20:35:02,988 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:35:08,623 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:35:08,623 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:35:08,628 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:35:08,709 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:35:08,720 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:35:10,888 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 20:35:15,081 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:35:21,268 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:35:21,268 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:35:21,271 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:35:21,463 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:35:21,482 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:35:25,887 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 20:35:29,085 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:35:34,618 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:35:34,618 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:35:34,621 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:35:34,703 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:35:34,715 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:35:37,533 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 20:35:43,021 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:35:45,843 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:35:45,844 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:35:45,846 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:35:45,917 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:35:45,928 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:35:49,216 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 20:35:51,382 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:36:03,129 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:36:03,130 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:36:03,132 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:36:03,207 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:36:03,219 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:36:12,869 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_dob.py', reloading
+2025-12-31 20:36:13,589 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:36:17,007 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:36:17,007 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:36:17,009 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:36:17,090 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:36:17,098 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:36:35,912 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:36:35,912 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:36:35,916 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:36:46,850 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_dob.py', reloading
+2025-12-31 20:36:47,544 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 20:36:50,226 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:36:50,227 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:36:50,231 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:36:50,381 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 20:36:50,400 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 20:36:56,466 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:36:56,466 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:36:56,469 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:37:08,441 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:37:08,442 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:37:08,444 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 20:37:45,873 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:37:45] "POST /provider HTTP/1.1" 200 -
+2025-12-31 20:37:46,010 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 20:37:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 20:40:46,917 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 20:40:46,918 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 20:40:46,921 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:00:22,546 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:00:22] "POST /provider HTTP/1.1" 200 -
+2025-12-31 21:00:22,563 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:00:22] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-31 21:00:31,790 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:00:31,790 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:00:31,792 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:00:31,852 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8124
+2025-12-31 21:00:31,852 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-31 21:00:31,854 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:00:33,082 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:00:33,082 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:00:33,083 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:00:33,124 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:00:33,131 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:00:36,010 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:00:36] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:00:36,094 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:00:36] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:00:36,267 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:00:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:06:06,481 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:06:06,481 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:06:06,483 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:06:40,183 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:06:40,184 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:06:40,186 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:12:49,072 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:12:49] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:12:49,093 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:12:49] "GET /static/styles.css HTTP/1.1" 200 -
+2025-12-31 21:33:09,305 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\models.py', reloading
+2025-12-31 21:33:10,120 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:33:16,295 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:33:16,295 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:33:16,298 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:33:16,577 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:33:16,595 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:33:35,361 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\init_db.py', reloading
+2025-12-31 21:33:36,076 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:33:40,578 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:33:40,578 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:33:40,580 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:33:40,710 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:33:40,722 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:33:46,214 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\init_db.py', reloading
+2025-12-31 21:33:47,692 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:33:58,659 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:33:58,660 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:33:58,666 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:33:58,779 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:33:58,795 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:34:06,642 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:34:11,204 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:34:21,892 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:34:21,893 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:34:21,898 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:34:22,334 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:34:22,347 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:34:33,996 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:34:34,579 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:34:40,220 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:34:40,220 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:34:40,222 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:34:40,311 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:34:40,322 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:34:46,064 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:34:46,823 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:35:05,320 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:35:05,321 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:35:05,323 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:35:05,520 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:35:05,534 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:35:10,669 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:35:18,018 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:35:27,451 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:35:27,451 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:35:27,455 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:35:27,625 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:35:27,640 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:36:15,951 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:36:15,952 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:36:15,958 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:36:23,803 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:36:23,803 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:36:23,807 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:36:31,869 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\init_db.py', reloading
+2025-12-31 21:36:32,268 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:36:35,033 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:36:35,033 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:36:35,037 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:36:35,189 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:36:35,204 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:36:38,068 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:36:38,068 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:36:38,070 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:36:51,515 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:36:51,862 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:36:53,562 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:36:53,562 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:36:53,565 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:36:53,622 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:36:53,632 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:36:59,648 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:37:00,143 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:37:04,863 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:37:04,863 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:37:04,868 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:37:04,964 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:37:04,975 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:37:06,134 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:37:06,135 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:37:06,152 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:37:33,701 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:37:34,219 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:37:38,861 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:37:38,861 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:37:38,862 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:37:38,940 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:37:38,950 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:37:44,955 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:37:44,955 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:37:44,963 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:38:04,584 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:38:06,145 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:38:09,554 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:38:09,555 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:38:09,558 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:38:09,618 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:38:09,625 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:38:12,541 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:38:13,036 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:38:18,902 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:38:18,902 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:38:18,904 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:38:18,988 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:38:19,001 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:38:20,674 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:38:20,675 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:38:20,679 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:38:39,249 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:38:39,250 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:38:39,280 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:39:02,634 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:02] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:39:02,781 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:02] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:39:03,880 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:39:04,616 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 21:39:17,355 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:17] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2025-12-31 21:39:17,364 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:17] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:39:17,393 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:17] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:39:17,468 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:39:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:40:07,268 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:07] "[32mPOST /provider HTTP/1.1[0m" 302 -
+2025-12-31 21:40:07,280 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:07] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:40:07,297 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:40:15,710 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:15] "GET /provider/patient/P8373 HTTP/1.1" 200 -
+2025-12-31 21:40:15,725 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:40:24,091 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:24] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:40:24,108 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:40:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:44:44,839 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:44:46,813 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:44:56,253 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:44:56,253 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:44:56,255 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:44:56,380 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:44:56,391 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:45:39,158 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:45:39,914 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:45:46,361 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:45:46,361 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:45:46,366 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:45:46,564 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:45:46,576 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:45:51,951 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:45:51,953 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:45:51,957 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:46:17,964 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:46:18,764 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:46:23,752 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:46:23,753 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:46:23,762 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:46:23,874 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:46:23,891 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:46:30,106 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_app.py', reloading
+2025-12-31 21:46:31,224 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:46:40,186 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:46:40,186 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:46:40,193 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:46:40,371 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:46:40,387 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:46:44,582 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:46:44,583 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:46:44,591 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:47:43,334 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:43] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:47:43,578 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:43] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:47:45,637 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:45] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:47:45,697 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:47:51,447 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:51] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:47:51,467 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:51] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:47:51,532 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:47:53,700 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:53] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:47:53,739 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:47:55,042 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:55] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:47:55,054 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:55] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:47:55,118 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:47:57,590 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-31 21:47:57,697 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:57] "GET /login HTTP/1.1" 200 -
+2025-12-31 21:47:57,998 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:47:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:08,299 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-31 21:48:08,308 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:08] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:48:08,316 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:08] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:48:08,364 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:11,761 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:11] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:48:11,835 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:16,156 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:16] "GET /provider/patient/P2002 HTTP/1.1" 200 -
+2025-12-31 21:48:16,225 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:28,524 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:28] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:48:28,629 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:32,213 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:32] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:48:32,279 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:36,133 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:36] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:48:36,173 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:39,310 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:39] "GET /provider/patient/P2002 HTTP/1.1" 200 -
+2025-12-31 21:48:39,364 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:53,825 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:53] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:48:53,946 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:48:58,131 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:58] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:48:58,196 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:48:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:16,699 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:16] "[32mPOST /provider/upload HTTP/1.1[0m" 302 -
+2025-12-31 21:49:16,733 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:16] "GET /results HTTP/1.1" 200 -
+2025-12-31 21:49:16,763 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:16] "GET /results HTTP/1.1" 200 -
+2025-12-31 21:49:16,812 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:25,078 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:25] "GET /timeline/P2002 HTTP/1.1" 200 -
+2025-12-31 21:49:25,126 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:31,907 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:31] "GET /results HTTP/1.1" 200 -
+2025-12-31 21:49:31,973 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:35,550 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:35] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:49:35,570 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:35] "GET /provider HTTP/1.1" 200 -
+2025-12-31 21:49:35,620 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:38,196 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:38] "GET /provider/patients HTTP/1.1" 200 -
+2025-12-31 21:49:38,257 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:49:42,560 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:42] "GET /provider/patient/P2002 HTTP/1.1" 200 -
+2025-12-31 21:49:42,617 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:49:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:52:26,898 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:52:28,622 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:52:35,892 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:52:35,893 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:52:35,896 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:52:36,030 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:52:36,044 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:55:05,321 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\main.py', reloading
+2025-12-31 21:55:07,027 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:55:10,338 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:55:10,338 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:55:10,340 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:55:10,433 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:55:10,446 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:55:38,673 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:55:38,674 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:55:38,679 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:56:09,601 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:56:09,601 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:56:09,603 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:56:19,083 - werkzeug - INFO -  * Detected change in 'E:\\hackathon\\test_timeline.py', reloading
+2025-12-31 21:56:19,408 - werkzeug - INFO -  * Restarting with stat
+2025-12-31 21:56:21,971 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:56:21,971 - __main__ - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:56:21,980 - __main__ - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:56:22,221 - werkzeug - WARNING -  * Debugger is active!
+2025-12-31 21:56:22,232 - werkzeug - INFO -  * Debugger PIN: 130-126-644
+2025-12-31 21:56:28,059 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:56:28,059 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:56:28,061 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:56:55,024 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2025-12-31 21:56:55,024 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2025-12-31 21:56:55,026 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2025-12-31 21:57:27,732 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:27] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-31 21:57:28,322 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:28] "GET /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:57:28,689 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:57:29,162 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-31 21:57:40,139 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:40] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:57:40,160 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:57:56,655 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:56] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:57:56,672 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:57:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:58:12,619 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:12] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:58:12,673 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:58:32,504 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:32] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:58:32,522 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:58:50,340 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:50] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:58:50,362 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-12-31 21:58:55,912 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:55] "POST /login?next=/ HTTP/1.1" 200 -
+2025-12-31 21:58:55,930 - werkzeug - INFO - 127.0.0.1 - - [31/Dec/2025 21:58:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-01-05 09:41:52,118 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2026-01-05 09:41:52,121 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2026-01-05 09:41:52,127 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2026-01-05 09:42:24,138 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2026-01-05 09:42:24,143 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2026-01-05 09:42:24,146 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2026-01-05 09:42:44,722 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2026-01-05 09:42:44,722 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
+2026-01-05 09:42:44,725 - main - WARNING - DATABASE_URL not found. Using local SQLite.

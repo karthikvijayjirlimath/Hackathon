@@ -663,3 +663,8 @@
 2026-01-05 09:42:44,722 - azure_utils - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
 2026-01-05 09:42:44,722 - main - WARNING - ENCRYPTION_KEY not found in environment or Key Vault. Generated a temporary key.
 2026-01-05 09:42:44,725 - main - WARNING - DATABASE_URL not found. Using local SQLite.
+2026-01-05 10:51:07,248 - app.utils.azure - WARNING - Azure Storage credentials not provided. Local storage will be used as fallback.
+2026-01-05 10:51:07,249 - app - WARNING - ENCRYPTION_KEY not found. Generated a temporary key.
+2026-01-05 10:51:07,437 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-01-05 10:51:07,438 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

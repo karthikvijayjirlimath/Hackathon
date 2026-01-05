@@ -1,5 +1,5 @@
-from main import app, db
-from models import User, UserRole, Patient, Provider, Payer, Bill, BillStatus, ClinicalRecord, CPTCode, HCPCSCode, ICDCode
+from run import app
+from app.models import db, User, UserRole, Patient, Provider, Payer, Bill, BillStatus, ClinicalRecord, CPTCode, HCPCSCode, ICDCode
 from werkzeug.security import generate_password_hash
 from datetime import date
 import os

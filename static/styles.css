@@ -1022,18 +1022,171 @@ body {
     color: var(--primary-hover);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .features-grid {
+.patient-summary-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1.5rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.patient-records-card {
+    grid-column: span 2; 
+    padding: 2rem; 
+    border-top: 4px solid var(--primary-color);
+}
+
+.provider-grid {
+    grid-template-columns: 2fr 1fr;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .patient-records-card {
+        grid-column: span 1 !important;
+    }
+    
+    .results-grid {
         grid-template-columns: 1fr;
     }
-    .container {
+    
+    .col-lg-4, .col-lg-8 {
+        width: 100% !important;
+    }
+    
+    .card[style*="position: sticky"] {
+        position: static !important;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .main-wrapper {
         padding: 1rem;
     }
-    .card {
-        padding: 2rem;
+
+    .container {
+        margin-top: 1rem;
     }
-    .logo h1 {
+
+    .header h1 {
         font-size: 2rem;
+    }
+
+    .upload-container-new {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1.5rem !important;
+    }
+
+    .table-responsive {
+        border: 0;
+    }
+
+    /* Force table to not be like tables anymore */
+    table.mobile-stack, 
+    table.mobile-stack thead, 
+    table.mobile-stack tbody, 
+    table.mobile-stack th, 
+    table.mobile-stack td, 
+    table.mobile-stack tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.mobile-stack thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table.mobile-stack tr { border: 1px solid var(--border-color); margin-bottom: 1rem; border-radius: 0.5rem; background: var(--card-bg); }
+    
+    table.mobile-stack td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: right !important;
+    }
+    
+    table.mobile-stack td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 1rem;
+        left: 1rem;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label);
+        color: var(--text-muted);
+    }
+
+    .btn-group {
+        display: flex;
+        width: 100%;
+    }
+    .btn-group .btn {
+        flex: 1;
+    }
+
+    .results-actions {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand {
+        font-size: 1.25rem;
+    }
+    
+    .logo-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    .drop-zone {
+        padding: 1.5rem;
     }
 }

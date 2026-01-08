@@ -1,0 +1,6 @@
+Patient Name: Margaret Hall
+CPT Codes: 27130 (Total hip arthroplasty)
+Diagnosis Codes (ICD-10): M16.0 (Bilateral primary osteoarthritis of hip)
+Estimated Treatment Cost: $25,500
+Clinical Justification: Severe bilateral hip pain, right worse than left. Difficulty with basic hygiene and mobility.
+Detailed Treatment Planning: Right total hip arthroplasty. Inpatient rehabilitation for 3 days. Follow-up for left hip replacement in 6 months.

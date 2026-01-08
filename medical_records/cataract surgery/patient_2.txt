@@ -1,0 +1,6 @@
+Patient Name: Jane Smith
+CPT Codes: 66984 (Extracapsular cataract removal with insertion of intraocular lens prosthesis)
+Diagnosis Codes (ICD-10): H25.12 (Age-related nuclear cataract, left eye)
+Estimated Treatment Cost: $3,650
+Clinical Justification: Patient experiences blurred vision and decreased color perception in the left eye. Examination shows significant cortical cataract. Visual acuity is 20/70.
+Detailed Treatment Planning: Ultrasound biometry for IOL sizing. Surgical removal of cataract via phacoemulsification. Placement of a posterior chamber intraocular lens. Post-op antibiotic and steroid drops prescribed.

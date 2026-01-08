@@ -1,0 +1,6 @@
+Patient Name: Edward Perez
+CPT Codes: D6010 (Surgical placement of implant body), D6057 (Custom abutment)
+Diagnosis Codes (ICD-10): K08.401 (Partial loss of teeth, unspecified cause, Class I)
+Estimated Treatment Cost: $5,200
+Clinical Justification: Missing lower molars preventing proper mastication. Patient is unable to use removable partial denture.
+Detailed Treatment Planning: Placement of two endosteal implants in the lower right quadrant. 4-month healing period. Custom abutments and porcelain crowns.

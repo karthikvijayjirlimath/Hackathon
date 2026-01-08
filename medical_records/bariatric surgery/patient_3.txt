@@ -1,0 +1,6 @@
+Patient Name: Sarah Miller
+CPT Codes: 43775 (Laparoscopic gastric sleeve)
+Diagnosis Codes (ICD-10): E66.01 (Morbid obesity), G47.33 (Obstructive sleep apnea)
+Estimated Treatment Cost: $14,800
+Clinical Justification: BMI 38 with significant comorbidities (Sleep apnea). Patient has documented weight loss attempts over 2 years.
+Detailed Treatment Planning: CPAP titration pre-op. Laparoscopic sleeve gastrectomy. Post-op pain management and early ambulation. Follow-up with bariatric surgeon and dietitian.

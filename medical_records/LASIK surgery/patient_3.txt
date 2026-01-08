@@ -1,0 +1,6 @@
+Patient Name: Patrick Evans
+CPT Codes: 66999 (LASIK)
+Diagnosis Codes (ICD-10): H52.13 (Myopia, bilateral)
+Estimated Treatment Cost: $3,800
+Clinical Justification: Stable myopia for 2 years. Active lifestyle (surfing, swimming) makes corrective lenses impractical.
+Detailed Treatment Planning: Conventional LASIK. Excimer laser ablation. Visual acuity check 24 hours post-op.

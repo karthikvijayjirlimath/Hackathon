@@ -1,0 +1,6 @@
+Patient Name: Gregory Campbell
+CPT Codes: 66999 (Unlisted procedure, anterior segment of eye - commonly used for LASIK)
+Diagnosis Codes (ICD-10): H52.13 (Myopia, bilateral)
+Estimated Treatment Cost: $4,000
+Clinical Justification: Patient has severe myopia and is unable to wear contact lenses due to dry eye syndrome. Desires spectacle independence for work as a pilot.
+Detailed Treatment Planning: Pre-operative corneal topography and pachymetry. Bilateral LASIK procedure using femtosecond laser for flap creation. Post-operative follow-up for 6 months.

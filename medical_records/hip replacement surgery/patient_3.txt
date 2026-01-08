@@ -1,0 +1,6 @@
+Patient Name: Thomas White
+CPT Codes: 27130 (Total hip arthroplasty)
+Diagnosis Codes (ICD-10): M87.051 (Idiopathic aseptic necrosis of right femur)
+Estimated Treatment Cost: $26,000
+Clinical Justification: Avascular necrosis of the right femoral head with secondary collapse. Severe pain and functional impairment.
+Detailed Treatment Planning: Right total hip arthroplasty. Use of ceramic-on-polyethylene bearing surface. Post-operative anticoagulation for DVT prophylaxis.

@@ -1,0 +1,6 @@
+Patient Name: Sandra Nelson
+CPT Codes: 33405 (Replacement, aortic valve, with cardiopulmonary bypass)
+Diagnosis Codes (ICD-10): I34.0 (Nonrheumatic mitral regurgitation)
+Estimated Treatment Cost: $78,000
+Clinical Justification: Severe mitral regurgitation with left ventricular dilatation. Risk of irreversible heart damage.
+Detailed Treatment Planning: Mitral valve repair or replacement. Intraoperative transesophageal echocardiography. Recovery in step-down unit after ICU.

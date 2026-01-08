@@ -1,0 +1,6 @@
+Patient Name: Maria Garcia
+CPT Codes: 66984 (Extracapsular cataract removal with insertion of intraocular lens prosthesis)
+Diagnosis Codes (ICD-10): H25.013 (Cortical age-related cataract, bilateral)
+Estimated Treatment Cost: $7,000 (Bilateral, staged)
+Clinical Justification: Bilateral cataracts significantly impacting daily activities and independent living. Right eye more severe.
+Detailed Treatment Planning: Staged bilateral surgery. Right eye first, followed by left eye 2 weeks later. Standard phacoemulsification with IOL.

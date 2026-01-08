@@ -8,19 +8,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0ea5e9',
+              'primary-hover': '#0284c7',
+              'primary-light': '#f0f9ff',
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
-<nav class="top-nav">
-    <a href="/" class="nav-brand">
-        <span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span>
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-8 py-4 flex justify-between items-center">
+    <a href="/" class="text-2xl font-black tracking-tight flex items-center gap-1">
+        <span class="text-primary">E</span>mil<span class="text-primary">Y</span>
     </a>
-    <div class="nav-links">
-        <a href="/" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ url_for('provider_patients_list') }}" class="nav-link"><i class="fas fa-users"></i> Patients</a>
-        <a href="/results" class="nav-link"><i class="fas fa-file-medical-alt"></i> Results</a>
-        <a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <div class="flex items-center gap-8">
+        <a href="/" class="text-slate-600 hover:text-primary font-bold text-sm flex items-center gap-2 transition-all">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="{{ url_for('provider_patients_list') }}" class="text-slate-600 hover:text-primary font-bold text-sm flex items-center gap-2 transition-all">
+            <i class="fas fa-users"></i> Patients
+        </a>
+        <a href="/results" class="text-slate-600 hover:text-primary font-bold text-sm flex items-center gap-2 transition-all">
+            <i class="fas fa-file-medical-alt"></i> Results
+        </a>
+        <a href="/logout" class="text-slate-600 hover:text-red-500 font-bold text-sm flex items-center gap-2 transition-all">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
     </div>
 </nav>
 
@@ -31,11 +53,11 @@
 
 <div class="main-wrapper">
     <div class="container">
-        <header class="header">
-            <div class="logo">
-                <h1><span style="color: var(--primary-color);">E</span>mil<span style="color: var(--primary-color);">Y</span></h1>
+        <header class="text-center mb-12 animate-in fade-in slide-in-from-top-4 duration-1000">
+            <div class="logo flex items-center justify-center gap-3 mb-2">
+                <h1 class="text-5xl font-black tracking-tighter text-slate-900"><span class="text-primary">E</span>mil<span class="text-primary">Y</span></h1>
             </div>
-            <p class="subtitle">Provider Portal - Medical Intelligence</p>
+            <p class="text-slate-500 font-semibold text-lg uppercase tracking-widest">Provider Portal • Medical Intelligence</p>
         </header>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -51,7 +73,7 @@
             {% endif %}
         {% endwith %}
 
-        <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        <div class="dashboard-grid provider-grid">
             <div class="left-col">
                 <form method="post" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" id="main-upload-form">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

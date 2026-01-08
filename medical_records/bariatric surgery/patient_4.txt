@@ -1,0 +1,6 @@
+Patient Name: David Taylor
+CPT Codes: 43775 (Laparoscopic gastric sleeve)
+Diagnosis Codes (ICD-10): E66.01 (Morbid obesity), I10 (Essential hypertension)
+Estimated Treatment Cost: $15,200
+Clinical Justification: BMI 41. Patient has joint pain and hypertension. Conservative treatments failed.
+Detailed Treatment Planning: Surgical clearance from cardiologist. Laparoscopic sleeve gastrectomy. Inpatient monitoring for 24 hours. Progressive diet advancement.

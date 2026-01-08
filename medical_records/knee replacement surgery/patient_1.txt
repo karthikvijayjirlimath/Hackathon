@@ -1,0 +1,6 @@
+Patient Name: Karen King
+CPT Codes: 27447 (Arthroplasty, knee, condyle and plateau; total knee arthroplasty)
+Diagnosis Codes (ICD-10): M17.11 (Unilateral primary osteoarthritis, right knee)
+Estimated Treatment Cost: $22,000
+Clinical Justification: Severe right knee pain, swelling, and instability. X-ray shows tricompartmental osteoarthritis. Non-surgical treatments (injections, PT) failed to provide relief.
+Detailed Treatment Planning: Total knee replacement (right). Computer-assisted navigation. Post-op PT for range of motion and weight-bearing exercises.

@@ -1,0 +1,6 @@
+Patient Name: Ashley Parker
+CPT Codes: 66999 (LASIK)
+Diagnosis Codes (ICD-10): H52.223 (Regular astigmatism, bilateral)
+Estimated Treatment Cost: $4,200
+Clinical Justification: High astigmatism causing distorted vision and headaches. Glasses are heavy and uncomfortable.
+Detailed Treatment Planning: Wavefront-guided LASIK to treat astigmatism. Enhancement included if target refraction not met. Antibiotic and anti-inflammatory drops post-op.

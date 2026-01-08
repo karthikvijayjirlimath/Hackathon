@@ -1,0 +1,6 @@
+Patient Name: Michael Davis
+CPT Codes: 43644 (Laparoscopic gastric bypass, Roux-en-Y)
+Diagnosis Codes (ICD-10): E66.01 (Morbid obesity), K21.9 (GERD)
+Estimated Treatment Cost: $18,500
+Clinical Justification: BMI 45, severe GERD. Gastric bypass is indicated as it addresses both obesity and reflux more effectively than sleeve.
+Detailed Treatment Planning: Pre-surgical optimization including sleep study. Laparoscopic Roux-en-Y gastric bypass. 2-day hospital stay. Lifelong vitamin supplementation and quarterly labs.

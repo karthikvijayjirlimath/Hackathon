@@ -97,7 +97,7 @@
             <h3 style="margin-bottom: 1rem; color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem;">
                 <i class="fas fa-user-medical"></i> Patient Information
             </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div class="patient-summary-grid">
                 <div class="info-row">
                     <span class="label">Patient Name:</span>
                     <span class="value" style="font-size: 1.1rem; font-weight: 600;">{{ results[0].patient }}</span>
@@ -115,7 +115,7 @@
     </div>
 
     <h3 style="margin-bottom: 1rem;"><i class="fas fa-file-medical-alt"></i> Extracted Records</h3>
-    <div class="results-grid">
+    <div class="results-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 2rem;">
         {% for record in results %}
         <div class="result-card">
             <div class="bill-header">

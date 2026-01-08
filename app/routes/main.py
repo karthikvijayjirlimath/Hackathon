@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request, session, current_app
+from flask import Blueprint, render_template, redirect, url_for, flash, request, session, current_app, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash
 from app.models import db, User, UserRole, CPTCode, HCPCSCode, ICDCode
@@ -11,6 +11,8 @@ main_bp = Blueprint('main', __name__)
 @main_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
+        if request.headers.get('Accept') == 'application/json':
+            return jsonify({'authenticated': True, 'user': {'email': current_user.email, 'name': current_user.name, 'role': current_user.role.value}})
         return redirect(url_for('main.dashboard'))
     
     form = LoginForm()
@@ -19,12 +21,21 @@ def login():
         if user and check_password_hash(user.password_hash, form.password.data):
             login_user(user)
             log_audit('LOGIN', details=f"User {user.email} logged in")
+            
+            if request.headers.get('Accept') == 'application/json':
+                return jsonify({'success': True, 'user': {'email': user.email, 'name': user.name, 'role': user.role.value}})
+                
             next_page = request.args.get('next')
             return redirect(next_page or url_for('main.dashboard'))
         else:
             log_audit('LOGIN_FAILED', details=f"Failed login attempt for {form.email.data}")
+            if request.headers.get('Accept') == 'application/json':
+                return jsonify({'success': False, 'message': 'Login Unsuccessful'}), 401
             flash('Login Unsuccessful. Please check email and password', 'warning')
     
+    if request.headers.get('Accept') == 'application/json':
+        return jsonify({'authenticated': False}), 401
+        
     return render_template('login.html', form=form)
 
 @main_bp.route('/logout')
@@ -37,6 +48,14 @@ def logout():
 @main_bp.route('/')
 @login_required
 def dashboard():
+    if request.headers.get('Accept') == 'application/json':
+        user_data = {
+            'email': current_user.email,
+            'name': current_user.name,
+            'role': current_user.role.value
+        }
+        return jsonify({'user': user_data})
+        
     if current_user.role == UserRole.PROVIDER:
         return redirect(url_for('provider.provider_dashboard'))
     elif current_user.role == UserRole.PATIENT:

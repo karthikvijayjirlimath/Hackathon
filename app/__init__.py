@@ -47,7 +47,10 @@ def create_app():
     app.secret_key = SECRET_KEY
     app.config['ENCRYPTION_KEY'] = ENCRYPTION_KEY
     
-    DB_URL = os.environ.get('DATABASE_URL') or "sqlite:///instance/app.db"
+    if not os.path.exists(app.instance_path):
+        os.makedirs(app.instance_path)
+
+    DB_URL = os.environ.get('DATABASE_URL') or "sqlite:///" + os.path.join(app.instance_path, 'app.db')
     app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     

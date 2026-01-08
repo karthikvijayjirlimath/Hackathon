@@ -1,0 +1,6 @@
+Patient Name: John Doe
+CPT Codes: 66984 (Extracapsular cataract removal with insertion of intraocular lens prosthesis)
+Diagnosis Codes (ICD-10): H25.11 (Age-related nuclear cataract, right eye)
+Estimated Treatment Cost: $3,500
+Clinical Justification: Patient reports significant glare while driving at night and difficulty reading fine print. Slit-lamp examination reveals 3+ nuclear sclerosis in the right eye. Visual acuity corrected to 20/50.
+Detailed Treatment Planning: Pre-operative evaluation and biometry for IOL power calculation. Phacoemulsification of the right eye under local anesthesia. Insertion of a monofocal intraocular lens. Post-operative follow-up at 1 day, 1 week, and 1 month.

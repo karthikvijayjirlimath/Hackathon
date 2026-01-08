@@ -1,6 +1,0 @@
-Patient Name: Betty Mitchell
-CPT Codes: 605.6200 (Dental Implant), 605.6210 (Abutment)
-Diagnosis Codes (ICD-10): K08.411 (Partial loss of teeth due to trauma, Class I)
-Estimated Treatment Cost: $4,500
-Clinical Justification: Patient lost tooth #8 in a cycling accident. Needs restoration for function and aesthetics.
-Detailed Treatment Planning: Bone graft at site #8. Implant placement after healing. Final crown placement after osseointegration.

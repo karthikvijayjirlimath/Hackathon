@@ -1,6 +1,0 @@
-Patient Name: Kimberly Edwards
-CPT Codes: 66999 (LASIK)
-Diagnosis Codes (ICD-10): H52.03 (Hypermetropia, bilateral)
-Estimated Treatment Cost: $4,500
-Clinical Justification: Farsightedness causing significant eye strain during computer work.
-Detailed Treatment Planning: LASIK for hyperopia. Larger ablation zone. Frequent use of artificial tears post-op to manage transient dry eye.

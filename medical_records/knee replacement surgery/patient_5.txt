@@ -1,6 +1,0 @@
-Patient Name: Donna Scott
-CPT Codes: 27447 (Total knee arthroplasty)
-Diagnosis Codes (ICD-10): M17.12 (Unilateral primary osteoarthritis, left knee)
-Estimated Treatment Cost: $22,500
-Clinical Justification: Left knee osteoarthritis with significant flexion contracture. Impacting ability to perform job duties.
-Detailed Treatment Planning: Left total knee replacement. Posterior stabilized implant. Focus on regaining full extension in post-op PT.

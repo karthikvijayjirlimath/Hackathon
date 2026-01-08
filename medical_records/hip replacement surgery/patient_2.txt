@@ -1,6 +1,0 @@
-Patient Name: Barbara Moore
-CPT Codes: 27130 (Total hip arthroplasty)
-Diagnosis Codes (ICD-10): M16.12 (Unilateral primary osteoarthritis, left hip)
-Estimated Treatment Cost: $24,500
-Clinical Justification: Persistent left hip pain interfering with sleep and walking. Joint space narrowing confirmed by X-ray. Conservative management unsuccessful.
-Detailed Treatment Planning: Total hip replacement (left). Posterior approach. Spinal anesthesia. Physical therapy for gait training and strengthening.

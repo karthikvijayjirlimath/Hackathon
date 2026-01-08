@@ -1,6 +1,0 @@
-Patient Name: Kenneth Green
-CPT Codes: 33533 (Coronary artery bypass, using arterial graft(s); single arterial graft)
-Diagnosis Codes (ICD-10): I25.10 (Atherosclerotic heart disease of native coronary artery without angina pectoris)
-Estimated Treatment Cost: $65,000
-Clinical Justification: Cardiac catheterization revealed 90% stenosis in the Left Anterior Descending (LAD) artery. Patient is at high risk for myocardial infarction.
-Detailed Treatment Planning: CABG x1 (LIMA to LAD). Median sternotomy. Cardiopulmonary bypass. 5-7 day hospital stay including ICU. Cardiac rehabilitation for 12 weeks.

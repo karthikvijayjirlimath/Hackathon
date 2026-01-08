@@ -1,6 +1,0 @@
-Patient Name: Kevin Carter
-CPT Codes: 33533 (CABG x1)
-Diagnosis Codes (ICD-10): I25.700 (Atherosclerosis of coronary artery bypass graft(s), unspecified, with unstable angina pectoris)
-Estimated Treatment Cost: $85,000
-Clinical Justification: Redo CABG required due to failed previous grafts and new significant lesions.
-Detailed Treatment Planning: Redo sternotomy (high risk). Coronary artery bypass. Extended ICU stay anticipated.

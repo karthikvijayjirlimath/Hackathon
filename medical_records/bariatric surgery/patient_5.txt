@@ -1,6 +1,0 @@
-Patient Name: Linda Anderson
-CPT Codes: 43644 (Laparoscopic gastric bypass)
-Diagnosis Codes (ICD-10): E66.01 (Morbid obesity), E11.9 (Type 2 diabetes)
-Estimated Treatment Cost: $19,000
-Clinical Justification: BMI 48. Poorly controlled Type 2 Diabetes. Gastric bypass recommended for superior metabolic outcomes.
-Detailed Treatment Planning: Pre-op diabetic management. Laparoscopic bypass surgery. Monitoring of blood glucose levels post-op. Long-term nutritional support.

@@ -1,6 +1,0 @@
-Patient Name: Nancy Lopez
-CPT Codes: 27447 (Total knee arthroplasty)
-Diagnosis Codes (ICD-10): M17.0 (Bilateral primary osteoarthritis of knee)
-Estimated Treatment Cost: $23,000
-Clinical Justification: Severe bilateral knee pain. Right knee is the primary source of disability. Imaging shows significant joint space loss.
-Detailed Treatment Planning: Right total knee replacement. Robotic-arm assisted surgery. Continuous passive motion (CPM) machine post-operatively.

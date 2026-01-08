@@ -1,6 +1,0 @@
-Patient Name: Emily Wilson
-CPT Codes: 43775 (Laparoscopic gastric sleeve)
-Diagnosis Codes (ICD-10): E66.01 (Morbid obesity due to excess calories)
-Estimated Treatment Cost: $15,000
-Clinical Justification: Patient has a BMI of 42 and has failed multiple supervised weight loss programs. Co-morbidities include hypertension and type 2 diabetes.
-Detailed Treatment Planning: Pre-operative nutritional counseling and psychological evaluation. Laparoscopic sleeve gastrectomy. Post-operative liquid diet for 2 weeks, followed by soft foods. Multi-disciplinary follow-up for 12 months.

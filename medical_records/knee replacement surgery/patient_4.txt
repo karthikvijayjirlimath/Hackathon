@@ -1,6 +1,0 @@
-Patient Name: Paul Hill
-CPT Codes: 27447 (Total knee arthroplasty)
-Diagnosis Codes (ICD-10): M17.11 (Unilateral primary osteoarthritis, right knee)
-Estimated Treatment Cost: $21,800
-Clinical Justification: Right knee pain that does not respond to corticosteroid or hyaluronic acid injections.
-Detailed Treatment Planning: Total knee replacement (right). Tourniquet-less technique. Inpatient stay 1-2 days. 6 weeks of outpatient physical therapy.

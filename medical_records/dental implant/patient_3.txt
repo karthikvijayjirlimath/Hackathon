@@ -1,6 +1,0 @@
-Patient Name: Carol Roberts
-CPT Codes: D6010 (Surgical placement of implant body)
-Diagnosis Codes (ICD-10): K08.119 (Complete loss of teeth due to trauma, unspecified)
-Estimated Treatment Cost: $12,000
-Clinical Justification: Edentulous upper arch. Patient requests fixed solution instead of conventional denture.
-Detailed Treatment Planning: "All-on-4" treatment concept. Placement of four implants in the maxilla. Immediate loading with a temporary bridge.

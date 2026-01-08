@@ -1,6 +1,0 @@
-Patient Name: Frank Collins
-CPT Codes: 66999 (LASIK)
-Diagnosis Codes (ICD-10): H52.13 (Myopia, bilateral)
-Estimated Treatment Cost: $4,100
-Clinical Justification: High myopia. Patient has had multiple broken glasses and lost contacts, impacting safety in his workplace.
-Detailed Treatment Planning: Bladeless LASIK. Post-op evaluations at 1 day, 1 month, and 3 months.

@@ -1,6 +1,0 @@
-Patient Name: William Brown
-CPT Codes: 66984 (Extracapsular cataract removal with insertion of intraocular lens prosthesis)
-Diagnosis Codes (ICD-10): H25.811 (Combined forms of age-related cataract, right eye)
-Estimated Treatment Cost: $3,550
-Clinical Justification: Patient has a combination of nuclear and posterior subcapsular cataract. Rapid progression noted over the last 3 months.
-Detailed Treatment Planning: Routine phacoemulsification of the right eye. Implantation of a foldable intraocular lens. Standard post-operative care.

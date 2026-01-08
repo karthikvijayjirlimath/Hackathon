@@ -1,6 +1,0 @@
-Patient Name: Brian Turner
-CPT Codes: D6010 (Surgical placement of implant body), D7950 (Bone graft - mandible or maxilla)
-Diagnosis Codes (ICD-10): K08.21 (Atrophy of mandible, minimal)
-Estimated Treatment Cost: $6,000
-Clinical Justification: Insufficient bone height for implant at site #30. Sinus lift/bone graft required.
-Detailed Treatment Planning: Sinus augmentation. Bone graft placement. 6-month wait for bone maturation before implant placement.

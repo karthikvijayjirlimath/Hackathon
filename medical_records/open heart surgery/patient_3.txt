@@ -1,6 +1,0 @@
-Patient Name: Ronald Baker
-CPT Codes: 33534 (Coronary artery bypass, using arterial graft(s); 2 arterial grafts)
-Diagnosis Codes (ICD-10): I25.110 (Atherosclerotic heart disease of native coronary artery with unstable angina pectoris)
-Estimated Treatment Cost: $70,000
-Clinical Justification: Multivessel coronary artery disease. Unstable angina despite maximal medical therapy.
-Detailed Treatment Planning: CABG x2. Harvesting of internal mammary artery and radial artery. Post-operative management in CV-ICU. Long-term antiplatelet therapy.

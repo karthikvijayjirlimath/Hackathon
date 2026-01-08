@@ -1,6 +1,0 @@
-Patient Name: Steven Young
-CPT Codes: 27130 (Total hip arthroplasty)
-Diagnosis Codes (ICD-10): M16.11 (Unilateral primary osteoarthritis, right hip)
-Estimated Treatment Cost: $24,800
-Clinical Justification: Progressive right hip pain. Patient is active and wants to return to golf. Joint preservation techniques no longer viable.
-Detailed Treatment Planning: Total hip replacement (right). Minimally invasive approach. Accelerated recovery protocol.

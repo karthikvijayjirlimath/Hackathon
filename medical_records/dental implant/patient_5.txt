@@ -1,6 +1,0 @@
-Patient Name: Helen Phillips
-CPT Codes: D6010 (Surgical placement of implant body)
-Diagnosis Codes (ICD-10): K08.431 (Partial loss of teeth due to periodontal disease, Class I)
-Estimated Treatment Cost: $4,800
-Clinical Justification: Tooth #7 lost due to localized advanced periodontitis. Replacement needed to prevent adjacent tooth migration.
-Detailed Treatment Planning: Guided bone regeneration. Single implant placement. Aesthetic crown matching adjacent dentition.

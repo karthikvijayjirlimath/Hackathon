@@ -1,6 +1,0 @@
-Patient Name: James Wilson
-CPT Codes: 27130 (Arthroplasty, acetabular and proximal femoral replacement; total hip arthroplasty)
-Diagnosis Codes (ICD-10): M16.11 (Unilateral primary osteoarthritis, right hip)
-Estimated Treatment Cost: $25,000
-Clinical Justification: Severe right hip pain and limited range of motion. Radiographs show bone-on-bone contact and osteophyte formation. Failure of physical therapy and NSAIDs.
-Detailed Treatment Planning: Total hip replacement surgery (right). Anterior approach. Post-operative physical therapy starting day 0. Home health care and equipment for recovery.

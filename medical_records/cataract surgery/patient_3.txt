@@ -1,6 +1,0 @@
-Patient Name: Robert Johnson
-CPT Codes: 66982 (Extracapsular cataract removal with insertion of intraocular lens prosthesis; complex)
-Diagnosis Codes (ICD-10): H26.111 (Traumatic cataract, right eye)
-Estimated Treatment Cost: $4,800
-Clinical Justification: Patient sustained ocular trauma 6 months ago. Developed dense traumatic cataract with zonular laxity. Risk of vitreous loss requires complex surgical approach.
-Detailed Treatment Planning: Complex phacoemulsification with potential use of capsular tension ring. Intraocular lens implantation. Monitored for potential retinal complications.

@@ -1,6 +1,0 @@
-Patient Name: Deborah Adams
-CPT Codes: 33430 (Replacement, mitral valve; with cardiopulmonary bypass)
-Diagnosis Codes (ICD-10): I35.0 (Nonrheumatic aortic stenosis)
-Estimated Treatment Cost: $75,000
-Clinical Justification: Severe aortic stenosis with heart failure symptoms (SOB, fatigue). Echocardiogram shows valve area < 1.0 cm2.
-Detailed Treatment Planning: Aortic valve replacement with bioprosthetic valve. Open heart surgery with bypass. Anticoagulation therapy. Post-surgical cardiac monitoring.
